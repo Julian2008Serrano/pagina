@@ -8,13 +8,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
+
 <body>
     <!-- Header -->
     <header>
     <div class="header-icons">
         <i class="fas fa-bars" id="menu-icon"></i>
         <i class="fas fa-search"></i>
-               <a href="registrarse.html"><i class="fas fa-user"></i></a>
+        <a href="registrarse.html"><i class="fas fa-user"></i></a>
+       <!-- Ícono filtro -->
+<i class="fa-solid fa-filter" id="filterToggle"></i>
+
+<!-- Menú de categorías (oculto al inicio) -->
+<div id="filterMenu" style="display:none; margin:10px 0; padding:10px; background:#f4f4f4; border-radius:8px;">
+    <p><strong>Filtrar por categoría:</strong></p>
+    <ul style="list-style:none; padding:0; margin:0;">
+        <li><button class="filter-option" data-category="Todos">Todos</button></li>
+        <li><button class="filter-option" data-category="Bolsos">Bolsos</button></li>
+        <li><button class="filter-option" data-category="Zapatos">Zapatos</button></li>
+        <li><button class="filter-option" data-category="Chaquetas">Chaquetas</button></li>
+    </ul>
+</div>
         <i class="fas fa-shopping-cart" id="cart-icon"></i>
        </div>   
      
@@ -41,7 +55,7 @@
         <div class="cart-total">
             Total: $0
         </div>
-        <button class="checkout-btn">Proceder al Pago</button>
+        <button class="checkout-btn" id="checkout-btn">Proceder al Pago</button>
     </div>
     
 
@@ -57,10 +71,10 @@
                     <h3 class="product-title">Chaqueta de Cuero Negro</h3>
                     <p class="product-price">$150.00</p>
                     <button class="add-to-cart">Añadir al Carrito</button>
-                    <a href="bolsos"></a>
+                    <a href="Bolsos"></a>
                 </div>
             </article>
-            <article class="product-card" category="Bolsos">
+            <article class="product-card" id="Bolsos">
                 <img src="Imagenes/B2.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Bolso de Cuero Marrón</h3>
@@ -629,6 +643,35 @@
         <!-- tus co-->
     </ul>
     <script src="Style/principal/.js"></script>
+    
+
+   <script>
+    const filterToggle = document.getElementById("filterToggle");
+    const filterMenu = document.getElementById("filterMenu");
+    const productos = document.querySelectorAll(".product-card");
+    const filterOptions = document.querySelectorAll(".filter-option");
+
+    // Mostrar/ocultar menú al hacer click en el ícono
+    filterToggle.addEventListener("click", () => {
+        filterMenu.style.display = filterMenu.style.display === "none" ? "block" : "none";
+    });
+
+    // Filtrar productos según la categoría seleccionada
+    filterOptions.forEach(option => {
+        option.addEventListener("click", () => {
+            const category = option.getAttribute("data-category");
+
+            productos.forEach(producto => {
+                if (category === "Todos" || producto.getAttribute("category") === category) {
+                    producto.style.display = "block";
+                } else {
+                    producto.style.display = "none";
+                }
+            });
+        });
+    });
+</script>
+
 
     <script>
         // Funcionalidad del sidebar
@@ -706,7 +749,39 @@
                 }, 2000);
             });
         });
+        // Botón de proceder al pago (WhatsApp)
+const checkoutBtn = document.querySelector(".checkout-btn");
+const phoneNumber = "573144805949"; // tu número en formato internacional (sin el +)
+
+checkoutBtn.addEventListener("click", () => {
+    const items = document.querySelectorAll(".cart-item");
+    if (items.length === 0) {
+        alert("Tu carrito está vacío");
+        return;
+    }
+
+    let message = "🛒 *Nuevo Pedido - Cuero y Moda*%0A%0A";
+
+    items.forEach((item, index) => {
+        const titleEl = item.querySelector("h4");
+        const priceEl = item.querySelector(".cart-item-price");
+
+        if (titleEl && priceEl) {
+            const title = titleEl.textContent;
+            const price = priceEl.textContent;
+            message += `${index + 1}. ${title} - ${price}%0A`;
+        }
+    });
+
+    const total = document.querySelector(".cart-total").textContent;
+    message += `%0A${total}`;
+
+    // Redirigir a WhatsApp
+    const url = `https://wa.me/${phoneNumber}?text=${message}`;
+    console.log("Pedido enviado a:", url); // Para verificar en consola
+    window.open(url, "_blank");
+});
     </script>
 
-
+</body>
 </html>
