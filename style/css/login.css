@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family:montserrat;
+} 
+body {
+    background: linear-gradient(120deg,  #161331, #370558);
+    height: 100vh 
+}
+.formulario {
+    border-color: var(--glass-bg-color);
+    border: 1px solid #fff;
+    border-radius: 20px;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color:#fff;
+}
+.formulario h1 {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding:  0 20px 0;
+    border-bottom: 1px solid silver;
+    outline: none;
+}
+.formulario form {
+    padding: 0  40px;
+    box-sizing: border-box;
+}
+form .username{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+.username input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+.username label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #adadad;
+    transition: 0.3s;
+    font-size: 16px;
+    pointer-events: none;
+}
+.username span::before{
+    content: '';
+    position: absolute;
+    top:40px;
+      left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ff00b3;
+    transition: .5s;
+}
+
+.username input:focus ~ label,
+.username input:valid ~ label{
+         top: -5px;
+         color: #2f00ff;
+        }
+.username input:focus ~ span::before,
+.username input:valid ~ span::before{
+    width: 100%;
+
+}
+.recordar{
+    margin: -5px 0 20px 5px;
+    color:#000000;
+    cursor: pointer; 
+}
+.recordar hover{
+text-decoration: underline;
+}
+input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #2f00ff;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 25px;
+    outline-offset: none;
+}
+input[type="submit"]:hover {
+    background: #a8b8ff;
+    color: #2f00ff;
+    border-color: #5900ff;
+        transition: .5s;
+}
+.registrarse{
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color:black;
+}
+.registrarse a {
+    color: #2f00ff;
+    text-decoration: none;
+}
+.registrarse a:hover {
+    text-decoration: underline;
+}
+.volver {
+    display: block;      
+    margin: 20px auto;        
+    text-align: center;       
+    padding: 10px 20px;       
+    background-color: #2f00ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    width: fit-content;       
+}

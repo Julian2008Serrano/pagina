@@ -1,0 +1,408 @@
+/* 🔹 Reset y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f8f8f8;
+    color: #333;
+    transition: margin-left 0.5s;
+}
+/* 🔹 css de la lupa  */
+.src-box {
+    font-size: 20px;
+    border: solid .25em #030303;
+    display: inline-block;
+    position: relative;
+    border-radius: 1.5em;
+    background: #222;
+    margin-right: 1rem;
+}
+
+.src-box input[type="text"] {
+    font-family: inherit;
+    font-weight: bold;
+    color: #fffcfc;
+    width: 2.5em;
+    height: 2.5em;
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 2.5em;
+    transition: width 800ms cubic-bezier(.68, -.55, .27, 1.55) 150ms;
+    padding-left: 1em;
+}
+
+.src-box input[type="text"]:focus,
+.src-box input[type="text"]:not(:placeholder-shown) {
+    width: 18em;
+    outline: none;
+}
+
+.src-box button[type="reset"] {
+    width: 1.4em;
+    height: 1.4em;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: .55em;
+    right: .55em;
+    transform: rotate(-45deg) translateY(2.2em);
+    transition: transform 150ms ease-out 150ms, opacity 150ms ease-out 150ms;
+}
+
+.src-box button[type="reset"]::before{
+background-color: red;}
+.src-box button[type="reset"]::after {
+    content: "";
+    background-color: #0c0cf0;
+    width: .3em;
+    height: 1.4em;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.src-box button[type="reset"]::after {
+    transform: rotate(90deg);
+    opacity: 0;
+    transition: transform 150ms ease-out, opacity 150ms ease-out;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #222;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 4px solid #fff;
+}
+
+.logo {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 2px;
+    text-align: right;
+    margin-left: auto;
+}
+
+.logo span {
+    color: #d4af37;
+}
+.hedear
+
+/* 🔹 Iconos del header */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header-icons i {
+    font-size: 1.7rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* 🔹 Sidebar */
+.sidebar {
+    height: 100%;
+    width: 250px; /* Ancho fijo */
+    position: fixed;
+    z-index: 101;
+    top: 0;
+    left: -250px; /* Oculto inicialmente */
+    background-color: #222;
+    overflow-x: hidden;
+    transition: left 0.3s ease-in-out; /* Animación fluida */
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #ddd;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #d4af37;
+    background-color: #333;
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        left: -100%;
+    }
+}
+
+
+/* 🔹 Carrito de compras */
+.cart {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 101;
+    top: 0;
+    right: 0;
+    background-color: #f8f8f8;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+}
+
+.cart h2 {
+    padding: 20px;
+    color: #222;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 2rem;
+    color: #222;
+    cursor: pointer;
+}
+
+.cart-items {
+    padding: 20px;
+}
+
+.cart-item {
+    display: flex;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-total {
+    padding: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-top: 1px solid #ddd;
+}
+
+.checkout-btn {
+    display: block;
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #d4af37;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* 🔹 Contenido principal */
+.main-content {
+    padding: 2rem;
+}
+
+/* 🔹 Banner */
+.banner {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1200x400');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.banner h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.banner p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #d4af37;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* 🔹 Productos */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1rem;
+}
+
+.product-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-price {
+    font-weight: bold;
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+
+.add-to-cart {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    background-color: #222;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* 🔹 Footer */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 1rem;
+}
+
+.footer-section h3 {
+    color: #d4af37;
+    margin-bottom: 1rem;
+}
+
+.copyright {
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+}
+
+/* 📱 🔹 Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-icons {
+        justify-content: center;
+    }
+
+    .sidebar {
+        width: 100%;
+        left: -100%;
+    }
+
+    .cart {
+        width: 100%;
+        right: -100%;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .banner p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+
+    .product-img {
+        height: 200px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+body {
+    border: 1.5px solid #b4b4b4; /* Puedes cambiar el color y el grosor */
+    margin: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
