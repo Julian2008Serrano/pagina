@@ -25,7 +25,7 @@
         <li><button class="filter-option" data-category="Bolsos">Bolsos</button></li>
         <li><button class="filter-option" data-category="Correas">Correas</button></li>
         <li><button class="filter-option" data-category="Zapatos">Zapatos</button></li>
-        <li><button class="filter-option" data-category="Chaquetas">Botines</button></li>
+        <li><button class="filter-option" data-category="Bt">Botines</button></li>
     </ul>
 </div>
 
@@ -39,7 +39,6 @@
         <a href="javascript:void(0)" class="close-btn" id="sidebar-close">&times;</a>
         <a href="Principal.html">Inicio</a>
         <a href="catalogo.html">Catalogo</a>
-        <a href="accesorios.html">Accesorios</a>
         <a href="contacto.html">Contacto</a>
     </div>
 
@@ -517,7 +516,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-               <article class="product-card">
+               <article class="product-card" category="Bt">
                 <img src="Imagenes/Z2.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Cinturón de Cuero</h3>
@@ -525,7 +524,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card" category="botines">
+            <article class="product-card" category="Bt">
                 <img src="Imagenes/Bt1.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Botas de Cuero</h3>
@@ -533,7 +532,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-                <article class="product-card" category="botines">
+                <article class="product-card" category="Bt">
                 <img src="Imagenes/Bt2.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Chaqueta de Cuero Negro</h3>
@@ -597,7 +596,7 @@
         filterMenu.style.display = filterMenu.style.display === "none" ? "block" : "none";
     });
 
-    // Filtrar productos según la categoría seleccionada
+    // Filtrar productos según la categoría seleccionada y cerrar el menú
     filterOptions.forEach(option => {
         option.addEventListener("click", () => {
             const category = option.getAttribute("data-category");
@@ -609,7 +608,24 @@
                     producto.style.display = "none";
                 }
             });
+
+            // Cerrar el menú después de seleccionar
+            filterMenu.style.display = "none";
+
+            // Subir al inicio de la página
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
+    });
+
+    // Cerrar el menú al hacer clic fuera de él
+    document.addEventListener("click", function(event) {
+        if (
+            filterMenu.style.display === "block" &&
+            !filterMenu.contains(event.target) &&
+            event.target !== filterToggle
+        ) {
+            filterMenu.style.display = "none";
+        }
     });
 </script>
 
@@ -647,82 +663,98 @@
         const cartItemsContainer = document.querySelector('.cart-items');
         const cartTotal = document.querySelector('.cart-total');
 
-        function getProductInfo(button) {
-            const productCard = button.closest('.product-card');
-            const title = productCard.querySelector('.product-title').textContent;
-            const price = productCard.querySelector('.product-price').textContent;
-            const imgSrc = productCard.querySelector('img').src;
-            return { title, price, imgSrc };
-        }
+        // --- Carrito persistente con localStorage ---
+function getCart() {
+    return JSON.parse(localStorage.getItem('cart')) || [];
+}
 
-        function updateCartTotal() {
-            let total = 0;
-            const prices = cartItemsContainer.querySelectorAll('.cart-item-price');
-            prices.forEach(priceEl => {
-                total += parseFloat(priceEl.textContent.replace('$', '').replace(',', '.'));
-            });
-            cartTotal.textContent = `Total: $${total.toFixed(2)}`;
-        }
+function saveCart(cart) {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
 
-        addToCartButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const { title, price, imgSrc } = getProductInfo(button);
-
-                // Crear el elemento del producto en el carrito
-                const cartItem = document.createElement('div');
-                cartItem.classList.add('cart-item');
-                cartItem.innerHTML = `
-                    <img src="${imgSrc}" alt="Producto" style="width:60px;height:auto;">
-                    <div class="cart-item-info">
-                        <h4>${title}</h4>
-                        <p class="cart-item-price">${price}</p>
-                    </div>
-                `;
-                cartItemsContainer.appendChild(cartItem);
-
-                updateCartTotal();
-
-                // Mostrar mensaje de añadido al carrito
-                const cartMessage = document.getElementById('cart-message');
-                cartMessage.style.display = 'block';
-                setTimeout(() => {
-                    cartMessage.style.display = 'none';
-                }, 2000);
-            });
+function renderCart() {
+    const cart = getCart();
+    cartItemsContainer.innerHTML = '';
+    let total = 0;
+    cart.forEach(item => {
+        total += parseFloat(item.price.replace('$', '').replace(',', '.')) * item.qty;
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+        cartItem.innerHTML = `
+            <img src="${item.imgSrc}" alt="Producto" style="width:60px;height:auto;">
+            <div class="cart-item-info">
+                <h4>${item.title}</h4>
+                <p class="cart-item-price" style="display:none;">${item.price}</p>
+                <div class="cart-item-controls">
+                    <button class="cart-item-minus">-</button>
+                    <span class="cart-item-qty">${item.qty}</span>
+                    <button class="cart-item-plus">+</button>
+                </div>
+                <span class="cart-item-price-show">${item.price}</span>
+            </div>
+        `;
+        // Botón +
+        cartItem.querySelector('.cart-item-plus').addEventListener('click', () => {
+            item.qty += 1;
+            saveCart(cart);
+            renderCart();
         });
-        // Botón de proceder al pago (WhatsApp)
-const checkoutBtn = document.querySelector(".checkout-btn");
-const phoneNumber = "573144805949"; // tu número en formato internacional (sin el +)
-
-checkoutBtn.addEventListener("click", () => {
-    const items = document.querySelectorAll(".cart-item");
-    if (items.length === 0) {
-        alert("Tu carrito está vacío");
-        return;
-    }
-
-    let message = "🛒 *Nuevo Pedido - Cuero y Moda*%0A%0A";
-
-    items.forEach((item, index) => {
-        const titleEl = item.querySelector("h4");
-        const priceEl = item.querySelector(".cart-item-price");
-
-        if (titleEl && priceEl) {
-            const title = titleEl.textContent;
-            const price = priceEl.textContent;
-            message += `${index + 1}. ${title} - ${price}%0A`;
-        }
+        // Botón -
+        cartItem.querySelector('.cart-item-minus').addEventListener('click', () => {
+            if (item.qty > 1) {
+                item.qty -= 1;
+            } else {
+                cart.splice(cart.indexOf(item), 1);
+            }
+            saveCart(cart);
+            renderCart();
+        });
+        cartItemsContainer.appendChild(cartItem);
     });
+    cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+}
 
-    const total = document.querySelector(".cart-total").textContent;
-    message += `%0A${total}`;
+// Al cargar la página, muestra el carrito guardado
+document.addEventListener('DOMContentLoaded', renderCart);
 
-    // Redirigir a WhatsApp
-    const url = `https://wa.me/${phoneNumber}?text=${message}`;
-    console.log("Pedido enviado a:", url); // Para verificar en consola
-    window.open(url, "_blank");
+function getProductInfo(button) {
+    const productCard = button.closest('.product-card');
+    const title = productCard.querySelector('.product-title').textContent;
+    const price = productCard.querySelector('.product-price').textContent;
+    const imgSrc = productCard.querySelector('img').src;
+    return { title, price, imgSrc };
+}
+
+function addCartItem({ title, price, imgSrc }) {
+    let cart = getCart();
+    const index = cart.findIndex(item => item.title === title);
+
+    if (index !== -1) {
+        cart[index].qty += 1;
+    } else {
+        cart.push({ title, price, imgSrc, qty: 1 });
+    }
+    saveCart(cart);
+    renderCart();
+
+    // Mostrar mensaje "añadido al carrito"
+    const cartMessage = document.getElementById('cart-message');
+    cartMessage.style.display = 'block';
+    setTimeout(() => {
+        cartMessage.style.display = 'none';
+    }, 1200);
+}
+
+addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const product = getProductInfo(button);
+        addCartItem(product);
+    });
 });
     </script>
 
+<div id="cart-message" style="display:none;position:fixed;top:30px;left:50%;transform:translateX(-50%);background:#d4af37;color:#fff;padding:12px 32px;border-radius:25px;z-index:9999;font-size:1.2rem;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+    Añadido al carrito
+</div>
 </body>
 </html>

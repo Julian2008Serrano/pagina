@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #f8f8f8;
+        background:url('muro.jpg') no-repeat center center fixed;
     color: #333;
     transition: margin-left 0.5s;
 }
@@ -157,7 +157,7 @@ header {
 /* Contenido principal */
 .main-content {
     padding: 2rem;
-   background-color:  rgb(187, 192, 192);
+    background-color:#f8f8f8;
 }
 
 .banner {
@@ -350,4 +350,79 @@ footer {
 .footer-location-btn:hover {
     background: #b38e19;
     color: #fff;
+}
+
+/* --- Adaptación móvil --- */
+@media (max-width: 600px) {
+    body {
+        font-size: 1rem;
+        padding: 0;
+        margin: 0;
+    }
+    .header-icons {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 8px;
+        font-size: 1.3rem;
+    }
+    .logo {
+        font-size: 1.3rem;
+        text-align: center;
+        margin: 10px 0;
+    }
+    .sidebar {
+        width: 0;
+        min-width: 180px;
+        padding-top: 60px;
+        font-size: 1rem;
+    }
+    .cart {
+        width: 0;
+        min-width: 220px;
+        padding-top: 60px;
+        font-size: 1rem;
+    }
+    .cart-items .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .main-content {
+        padding: 10px;
+    }
+    .ubicacion {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto 20px auto;
+    }
+    .img-local {
+        width: 90vw;
+        max-width: 350px;
+        height: auto;
+        border-radius: 16px;
+        margin-bottom: 12px;
+    }
+    .mision-texto {
+        padding: 0 8px;
+    }
+    .footer-content {
+        flex-direction: column;
+        gap: 18px;
+        text-align: center;
+    }
+    .footer-section {
+        min-width: unset;
+        margin-bottom: 10px;
+    }
+    .footer-social {
+        justify-content: center;
+        gap: 18px;
+        margin-top: 10px;
+    }
+    .footer-location-btn {
+        margin: 12px auto 0 auto;
+        padding: 8px 18px;
+        font-size: 1rem;
+    }
 }
