@@ -14,22 +14,21 @@
     <header>
     <div class="header-icons">
         <i class="fas fa-bars" id="menu-icon"></i>
-        <i class="fas fa-search"></i>
         <a href="registrarse.html"><i class="fas fa-user"></i></a>
-       <!-- Ícono filtro -->
-<i class="fa-solid fa-filter" id="filterToggle"></i>
-
+        <i class="fa-solid fa-filter" id="filterToggle"></i>
+                <i class="fas fa-shopping-cart" id="cart-icon"></i>
 <!-- Menú de categorías (oculto al inicio) -->
 <div id="filterMenu" style="display:none; margin:10px 0; padding:10px; background:#f4f4f4; border-radius:8px;">
-    <p><strong>Filtrar por categoría:</strong></p>
-    <ul style="list-style:none; padding:0; margin:0;">
+         <p><strong>Categorias:</strong></p>
+         <ul style="list-style:none; padding:0; margin:0;">
         <li><button class="filter-option" data-category="Todos">Todos</button></li>
         <li><button class="filter-option" data-category="Bolsos">Bolsos</button></li>
+        <li><button class="filter-option" data-category="Correas">Correas</button></li>
         <li><button class="filter-option" data-category="Zapatos">Zapatos</button></li>
-        <li><button class="filter-option" data-category="Chaquetas">Chaquetas</button></li>
+        <li><button class="filter-option" data-category="Chaquetas">Botines</button></li>
     </ul>
 </div>
-        <i class="fas fa-shopping-cart" id="cart-icon"></i>
+
        </div>   
      
     <div class="logo">CUERO <span>Y MODA</span></div>
@@ -74,7 +73,7 @@
                     <a href="Bolsos"></a>
                 </div>
             </article>
-            <article class="product-card" id="Bolsos">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B2.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Bolso de Cuero Marrón</h3>
@@ -82,7 +81,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B3.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Cinturón de Cuero</h3>
@@ -90,7 +89,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B4.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Botas de Cuero</h3>
@@ -101,7 +100,7 @@
         </section>
     </div>
     <section class="products">
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B5.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Chaqueta de Cuero Negro</h3>
@@ -109,7 +108,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B6.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Bolso de Cuero Marrón</h3>
@@ -117,7 +116,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B7.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Cinturón de Cuero</h3>
@@ -125,7 +124,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B8.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Botas de Cuero</h3>
@@ -136,7 +135,7 @@
         </section>
     </div>
     <section class="products">
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B9.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Chaqueta de Cuero Negro</h3>
@@ -144,7 +143,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B10.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Bolso de Cuero Marrón</h3>
@@ -152,7 +151,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B11.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Cinturón de Cuero</h3>
@@ -160,7 +159,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B12.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Botas de Cuero</h3>
@@ -171,7 +170,7 @@
         </section>
     </div>
     <section class="products">
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B13.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Chaqueta de Cuero Negro</h3>
@@ -179,7 +178,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B14.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Bolso de Cuero Marrón</h3>
@@ -187,7 +186,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B15.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Cinturón de Cuero</h3>
@@ -195,7 +194,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B16.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Botas de Cuero</h3>
@@ -206,7 +205,7 @@
         </section>
     </div>
     <section class="products">
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B17.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Chaqueta de Cuero Negro</h3>
@@ -214,15 +213,15 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
-                <img src="Imagenes/B18.jpeg"Producto" class="product-img">
+            <article class="product-card" category="Bolsos">
+                <img src="Imagenes/B18.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Bolso de Cuero Marrón</h3>
                     <p class="product-price">$90.00</p>
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B19.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Cinturón de Cuero</h3>
@@ -230,7 +229,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B20.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Botas de Cuero</h3>
@@ -238,7 +237,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-                <article class="product-card">
+                <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B21.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Chaqueta de Cuero Negro</h3>
@@ -246,7 +245,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B22.jpeg"Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Bolso de Cuero Marrón</h3>
@@ -254,7 +253,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B23.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Cinturón de Cuero</h3>
@@ -262,7 +261,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B24.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Botas de Cuero</h3>
@@ -270,7 +269,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-                <article class="product-card">
+                <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B25.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Chaqueta de Cuero Negro</h3>
@@ -278,7 +277,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B26.jpeg"Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Bolso de Cuero Marrón</h3>
@@ -286,7 +285,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B27.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Cinturón de Cuero</h3>
@@ -294,7 +293,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B28.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Botas de Cuero</h3>
@@ -302,7 +301,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-                <article class="product-card">
+                <article class="product-card" category="Bolsos">
                 <img src="Imagenes/B29.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Chaqueta de Cuero Negro</h3>
@@ -310,15 +309,15 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
-                <img src="Imagenes/B30.jpeg"Producto" class="product-img">
+            <article class="product-card" category="Bolsos">
+                <img src="Imagenes/B30.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Bolso de Cuero Marrón</h3>
                     <p class="product-price">$90.00</p>
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card" category="accesorios">
+            <article class="product-card" category="Correas">
                 <img src="Imagenes/C1.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Cinturón de Cuero</h3>
@@ -326,7 +325,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card" category="accesorios">
+            <article class="product-card" category="Correas" category="accesorios">
                 <img src="Imagenes/C2.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Botas de Cuero</h3>
@@ -334,7 +333,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-                <article class="product-card">
+                <article class="product-card" category="Correas">
                 <img src="Imagenes/C3.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Chaqueta de Cuero Negro</h3>
@@ -342,15 +341,15 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
-                <img src="Imagenes/C4.jpeg"Producto" class="product-img">
+            <article class="product-card" category="Correas">
+                <img src="Imagenes/C4.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Bolso de Cuero Marrón</h3>
                     <p class="product-price">$90.00</p>
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Correas">
                 <img src="Imagenes/C5.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Cinturón de Cuero</h3>
@@ -358,7 +357,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Correas">
                 <img src="Imagenes/C6.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Botas de Cuero</h3>
@@ -366,7 +365,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-               <article class="product-card">
+               <article class="product-card" category="Correas">
                 <img src="Imagenes/C7.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Cinturón de Cuero</h3>
@@ -374,7 +373,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Correas">
                 <img src="Imagenes/C8.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Botas de Cuero</h3>
@@ -382,7 +381,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-                <article class="product-card">
+                <article class="product-card" category="Correas">
                 <img src="Imagenes/C9.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Chaqueta de Cuero Negro</h3>
@@ -390,15 +389,15 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
-                <img src="Imagenes/C10.jpeg"Producto" class="product-img">
+            <article class="product-card" category="Correas">
+                <img src="Imagenes/C10.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Bolso de Cuero Marrón</h3>
                     <p class="product-price">$90.00</p>
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Correas">
                 <img src="Imagenes/C11.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Cinturón de Cuero</h3>
@@ -406,7 +405,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Correas">
                 <img src="Imagenes/C12.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Botas de Cuero</h3>
@@ -414,7 +413,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-                <article class="product-card">
+                <article class="product-card" category="Correas">
                 <img src="Imagenes/C13.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Chaqueta de Cuero Negro</h3>
@@ -422,15 +421,15 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
-                <img src="Imagenes/C14.jpeg"Producto" class="product-img">
+            <article class="product-card" category="Correas">
+                <img src="Imagenes/C14.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Bolso de Cuero Marrón</h3>
                     <p class="product-price">$90.00</p>
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Correas">
                 <img src="Imagenes/C15.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Cinturón de Cuero</h3>
@@ -438,7 +437,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Correas">
                 <img src="Imagenes/C16.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Botas de Cuero</h3>
@@ -446,7 +445,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-               <article class="product-card">
+               <article class="product-card" category="Correas">
                 <img src="Imagenes/C17.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Cinturón de Cuero</h3>
@@ -454,7 +453,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Correas">
                 <img src="Imagenes/C18.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Botas de Cuero</h3>
@@ -478,7 +477,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Zapatos">
                 <img src="Imagenes/T3.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Botas de Cuero</h3>
@@ -486,7 +485,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-                <article class="product-card">
+                <article class="product-card" category="Zapatos">
                 <img src="Imagenes/T4.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Chaqueta de Cuero Negro</h3>
@@ -494,15 +493,15 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
-                <img src="Imagenes/T5.jpeg"Producto" class="product-img">
+            <article class="product-card" category="Zapatos">
+                <img src="Imagenes/T5.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Bolso de Cuero Marrón</h3>
                     <p class="product-price">$90.00</p>
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Zapatos">
                 <img src="Imagenes/T6.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Cinturón de Cuero</h3>
@@ -510,7 +509,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            <article class="product-card">
+            <article class="product-card" category="Zapatos">
                 <img src="Imagenes/Z1.jpeg" alt="Producto" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Botas de Cuero</h3>
@@ -542,65 +541,7 @@
                     <button class="add-to-cart">Añadir al Carrito</button>
                 </div>
             </article>
-            ------------------------------------------
-            <article class="product-card">
-                <img src="Imagenes/B30.jpeg"Producto" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Bolso de Cuero Marrón</h3>
-                    <p class="product-price">$90.00</p>
-                    <button class="add-to-cart">Añadir al Carrito</button>
-                </div>
-            </article>
-            <article class="product-card">
-                <img src="Imagenes/C1.jpeg" alt="Producto" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Cinturón de Cuero</h3>
-                    <p class="product-price">$45.00</p>
-                    <button class="add-to-cart">Añadir al Carrito</button>
-                </div>
-            </article>
-            <article class="product-card">
-                <img src="Imagenes/C2.jpeg" alt="Producto" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Botas de Cuero</h3>
-                    <p class="product-price">$180.00</p>
-                    <button class="add-to-cart">Añadir al Carrito</button>
-                </div>
-            </article>
-                <article class="product-card">
-                <img src="Imagenes/C3.jpeg" alt="Producto" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Chaqueta de Cuero Negro</h3>
-                    <p class="product-price">$150.00</p>
-                    <button class="add-to-cart">Añadir al Carrito</button>
-                </div>
-            </article>
-            <article class="product-card">
-                <img src="Imagenes/C4.jpeg"Producto" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Bolso de Cuero Marrón</h3>
-                    <p class="product-price">$90.00</p>
-                    <button class="add-to-cart">Añadir al Carrito</button>
-                </div>
-            </article>
-            <article class="product-card">
-                <img src="Imagenes/C5.jpeg" alt="Producto" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Cinturón de Cuero</h3>
-                    <p class="product-price">$45.00</p>
-                    <button class="add-to-cart">Añadir al Carrito</button>
-                </div>
-            </article>
-            <article class="product-card">
-                <img src="Imagenes/C6.jpeg" alt="Producto" class="product-img">
-                <div class="product-info">
-                    <h3 class="product-title">Botas de Cuero</h3>
-                    <p class="product-price">$180.00</p>
-                    <button class="add-to-cart">Añadir al Carrito</button>
-                </div>
-            </article>
         </section>
-    </div>
 
     <!-- Footer -->
     <footer>
