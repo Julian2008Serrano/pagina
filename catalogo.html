@@ -758,6 +758,26 @@ addToCartButtons.forEach(button => {
         addCartItem(product);
     });
 });
+
+const checkoutBtn = document.getElementById('checkout-btn');
+
+checkoutBtn.addEventListener('click', () => {
+    const cart = getCart();
+    if (cart.length === 0) {
+        alert('El carrito está vacío.');
+        return;
+    }
+    let mensaje = '¡Hola! Quiero hacer este pedido:\n';
+    cart.forEach(item => {
+        mensaje += `• ${item.title} (${item.qty}) - ${item.price}\n`;
+    });
+    mensaje += `Total: ${cartTotal.textContent.replace('Total:', '').trim()}`;
+
+    // Número de WhatsApp destino (cambia por el tuyo)
+    const numero = '573144805949';
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+});
     </script>
 
 <div id="cart-message" style="display:none;position:fixed;top:30px;left:50%;transform:translateX(-50%);background:#d4af37;color:#fff;padding:12px 32px;border-radius:25px;z-index:9999;font-size:1.2rem;box-shadow:0 2px 8px rgba(0,0,0,0.15);">

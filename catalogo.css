@@ -26,8 +26,10 @@ header {
     z-index: 100;
 }
 .logo {
-    font-size: 1.8rem;
+    text-align: right;
+    font-size: 2rem;
     font-weight: bold;
+    margin: 0 20px 0 0;
 }
 
 .logo span {
@@ -177,6 +179,62 @@ header {
 .cart-item-info {
     flex: 1;
 }
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0;
+    position: relative;
+}
+
+.cart-item-minus, .cart-item-plus {
+    background: #d4af37;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(212,175,55,0.12);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.cart-item-minus:hover, .cart-item-plus:hover {
+    background: #b38e19;
+    transform: scale(1.12);
+}
+
+.cart-item-qty {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #222;
+    min-width: 28px;
+    text-align: center;
+}
+
+.cart-item-delete {
+    background: #d9534f;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 0;
+    box-shadow: 0 2px 6px rgba(217,83,79,0.12);
+    transition: background 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-item-delete:hover {
+    background: #b52a1a;
+    transform: scale(1.12);
+}
 
 .cart-total {
     padding: 20px;
@@ -265,7 +323,7 @@ header {
 
 .product-img {
     width: 100%;
-    height: 250px;
+    height: 300px;
     border-radius: 20px 20px 0 0;
     object-fit: cover;
 }
@@ -388,56 +446,59 @@ footer {
 
 /* ===== Estilo del menú de categorías ===== */
 #filterMenu {
-    position: absolute ;
-    top: 50px; /* se ajusta según dónde tengas el ícono */
+    position: absolute;
+    top: 50px;
     left: 20px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0px 6px 20px rgba(0,0,0,0.15);
-    padding: 15px;
-    width: 200px;
-    z-index: 9999; /* siempre encima */
-    display: none; /* oculto al inicio */
+    background: #222;
+    border-radius: 16px;
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.18);
+    padding: 18px 20px;
+    width: 220px;
+    z-index: 9999;
+    display: none;
     animation: fadeIn 0.3s ease;
+    border: 2px solid #d4af37;
 }
 
-/* Título dentro del menú */
 #filterMenu p {
     font-weight: bold;
-    margin-bottom: 10px;
-    font-size: 14px;
-    color: #333;
+    margin-bottom: 14px;
+    font-size: 1.1rem;
+    color: #d4af37;
+    letter-spacing: 1px;
+    text-align: center;
 }
 
-/* Lista */
 #filterMenu ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-/* Opciones */
 #filterMenu li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .filter-option {
     width: 100%;
-    background: #f8f8f8;
-    border: none;
-    padding: 10px;
+    background: #fff;
+    color: #222;
+    border: 1px solid #d4af37;
+    padding: 10px 0;
     border-radius: 8px;
-    text-align: left;
-    font-size: 14px;
+    text-align: center;
+    font-size: 1rem;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    box-shadow: 0 2px 8px rgba(212,175,55,0.07);
 }
 
-/* Hover */
 .filter-option:hover {
-    background: #007BFF;
-    color: white;
-    transform: translateX(5px);
+    background: #d4af37;
+    color: #fff;
+    border: 1px solid #fff;
+    transform: translateX(5px) scale(1.04);
 }
 
 /* Animación de aparición */
