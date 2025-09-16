@@ -676,7 +676,7 @@ function renderCart() {
     const cart = getCart();
     cartItemsContainer.innerHTML = '';
     let total = 0;
-    cart.forEach(item => {
+    cart.forEach((item, idx) => {
         total += parseFloat(item.price.replace('$', '').replace(',', '.')) * item.qty;
         const cartItem = document.createElement('div');
         cartItem.classList.add('cart-item');
@@ -689,6 +689,7 @@ function renderCart() {
                     <button class="cart-item-minus">-</button>
                     <span class="cart-item-qty">${item.qty}</span>
                     <button class="cart-item-plus">+</button>
+                    <button class="cart-item-delete" title="Eliminar">&#10006;</button>
                 </div>
                 <span class="cart-item-price-show">${item.price}</span>
             </div>
@@ -704,8 +705,14 @@ function renderCart() {
             if (item.qty > 1) {
                 item.qty -= 1;
             } else {
-                cart.splice(cart.indexOf(item), 1);
+                cart.splice(idx, 1);
             }
+            saveCart(cart);
+            renderCart();
+        });
+        // Botón eliminar
+        cartItem.querySelector('.cart-item-delete').addEventListener('click', () => {
+            cart.splice(idx, 1);
             saveCart(cart);
             renderCart();
         });
