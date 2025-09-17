@@ -157,7 +157,7 @@ header {
 /* Contenido principal */
 .main-content {
     padding: 2rem;
-     
+    background-color:#f8f8f8;
 }
 
 .banner {
@@ -350,4 +350,63 @@ footer {
 .footer-location-btn:hover {
     background: #b38e19;
     color: #fff;
+}
+
+/* --- Adaptación móvil --- */
+@media (max-width: 600px) {
+    .sidebar {
+        width: 0 !important;
+        min-width: 0 !important;
+        padding-top: 60px;
+        font-size: 1rem;
+        overflow-x: hidden;
+    }
+    .cart {
+        width: 0 !important;
+        min-width: 0 !important;
+        padding-top: 60px;
+        font-size: 1rem;
+        overflow-x: hidden;
+    }
+    .main-content {
+        padding: 10px;
+        background: rgba(255,255,255,0.85);
+        border-radius: 18px;
+        margin: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .logo {
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 16px 0 8px 0;
+        letter-spacing: 2px;
+    }
+    .footer-location-btn {
+        width: 100%;
+        margin: 16px 0 0 0;
+        padding: 12px 0;
+        font-size: 1.1rem;
+        border-radius: 24px;
+    }
+    .footer-location-btn i {
+        font-size: 1.2rem;
+    }
+    .footer-content {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+    .footer-section {
+        min-width: unset;
+        margin-bottom: 8px;
+    }
+    .footer-social {
+        justify-content: center;
+        gap: 14px;
+        margin-top: 8px;
+    }
+    .copyright {
+        font-size: 0.95rem;
+        padding: 10px 0 0 0;
+    }
 }
