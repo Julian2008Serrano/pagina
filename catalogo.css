@@ -506,3 +506,18 @@ footer {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+#product-modal .modal-desc {
+    margin-bottom: 18px;
+    color: #444;
+    font-size: 1rem;
+    text-align: left;
+}
+
+#product-modal img {
+    display: block;
+    margin: 0 auto 12px auto;
+    max-width: 100%;
+    border-radius: 12px;
+    position: relative;
+}
