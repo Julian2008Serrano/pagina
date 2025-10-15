@@ -310,10 +310,18 @@ header {
     margin-bottom: 32px;
     justify-items: center;
 }
-
+  .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 30px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
 .product-card {
     width: 280px; /* Ancho fijo para todas las tarjetas */
-    height: 380px; /* Altura fija para todas las tarjetas */
+    height: 420px; /* Altura fija para todas las tarjetas */
     background: #fff;
     border-radius: 14px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
