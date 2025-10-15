@@ -14,7 +14,7 @@
     <header>
     <div class="header-icons">
         <i class="fas fa-bars" id="menu-icon"></i>
-        <a href="registrarse.html"><i class="fas fa-user"></i></a>
+        <a id="perfil-btn" style="cursor:pointer;"><i class="fas fa-user"></i></a>
         <i class="fa-solid fa-filter" id="filterToggle"></i>
                 <i class="fas fa-shopping-cart" id="cart-icon"></i>
 <!-- Menú de categorías (oculto al inicio) -->
@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="cart-total">
-            Total: $0
+            Total: 0
         </div>
         <button class="checkout-btn" id="checkout-btn">Proceder al Pago</button>
     </div>
@@ -63,34 +63,34 @@
             <img src="Imagenes/B1.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
                 <h3 class="product-title">Bolso de Cuero Marron</h3>
-                <p class="product-price">$150.00</p>
+                <p class="product-price">$150.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
 
-        <article class="product-card" data-category="Bolsos">
+        <article class="product-card" data-category="Bolsos" data-images='{"Beige":["Imagenes/B2.jpeg"],"Marrón":["Imagenes/.jpeg"],"Blanco":["Imagenes/.jpeg"]}'>
             <img src="Imagenes/B2.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
                 <h3 class="product-title">Bolso de Cuero beige</h3>
-                <p class="product-price">$90.00</p>
+                <p class="product-price">$130.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
 
-        <article class="product-card" data-category="Bolsos">
+        <article class="product-card" data-category="Bolsos" data-images='{"Negro":["Imagenes/B4.jpeg"]}'>
             <img src="Imagenes/B4.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Bolso Blanco</h3>
-                <p class="product-price">$45.00</p>
+                <h3 class="product-title">Bolso Negro</h3>
+                <p class="product-price">$140.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
 
-        <article class="product-card" data-category="Bolsos" data-images='{"Negro":["Imagenes/B28.jpeg"]}'>
+        <article class="product-card" data-category="Bolsos"  data-images='{"Negro":["Imagenes/B28.jpeg"],"Rojo":["Imagenes/B27.jpeg"]}'>
             <img src="Imagenes/B27.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Bolso de Cuero Negro</h3>
-                <p class="product-price">$180.00</p>
+                <h3 class="product-title">Bolso de Cuero Rojo</h3>
+                <p class="product-price">$160.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -98,8 +98,8 @@
         <article class="product-card" data-category="Bolsos">
             <img src="Imagenes/B6.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Bolso de Cuero Marrón</h3>
-                <p class="product-price">$90.00</p>
+                <h3 class="product-title">Bolso de Cuero Marrón Vinotinto</h3>
+                <p class="product-price">$130.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -108,7 +108,7 @@
             <img src="Imagenes/B7.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
                 <h3 class="product-title">Bolso de Cuero en Rojo</h3>
-                <p class="product-price">$45.00</p>
+                <p class="product-price">$145.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -116,8 +116,8 @@
         <article class="product-card" data-category="Bolsos">
             <img src="Imagenes/B8.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Botas de Cuero</h3>
-                <p class="product-price">$180.00</p>
+                <h3 class="product-title">Bolso Rojo con Textura</h3>
+                <p class="product-price">$150.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -125,8 +125,8 @@
         <article class="product-card" data-category="Bolsos">
             <img src="Imagenes/B9.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Chaqueta de Cuero Negro</h3>
-                <p class="product-price">$150.00</p>
+                <h3 class="product-title">Billetera Blanca</h3>
+                <p class="product-price">$100.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -134,8 +134,8 @@
         <article class="product-card" data-category="Bolsos">
             <img src="Imagenes/B10.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Bolso de Cuero Marrón</h3>
-                <p class="product-price">$90.00</p>
+                <h3 class="product-title">Bolso de Mano</h3>
+                <p class="product-price">$75.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -143,8 +143,8 @@
         <article class="product-card" data-category="Bolsos">
             <img src="Imagenes/B11.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Cinturón de Cuero</h3>
-                <p class="product-price">$45.00</p>
+                <h3 class="product-title">Bolso Blanco Hueso</h3>
+                <p class="product-price">120.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -152,8 +152,8 @@
         <article class="product-card" data-category="Bolsos">
             <img src="Imagenes/B12.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Botas de Cuero</h3>
-                <p class="product-price">$180.00</p>
+                <h3 class="product-title">Bolso Negro Elegante </h3>
+                <p class="product-price">$180.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -161,8 +161,8 @@
         <article class="product-card" data-category="Bolsos">
             <img src="Imagenes/B13.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Chaqueta de Cuero Negro</h3>
-                <p class="product-price">$150.00</p>
+                <h3 class="product-title">Billetera Azul Cielo</h3>
+                <p class="product-price">$100.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -170,8 +170,8 @@
         <article class="product-card" data-category="Bolsos">
             <img src="Imagenes/B14.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Bolso de Cuero Marrón</h3>
-                <p class="product-price">$90.00</p>
+                <h3 class="product-title">Billetera Verde</h3>
+                <p class="product-price">$100.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -179,8 +179,8 @@
         <article class="product-card" data-category="Bolsos">
             <img src="Imagenes/B15.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Cinturón de Cuero</h3>
-                <p class="product-price">$45.00</p>
+                <h3 class="product-title">Billetera Color Durazno</h3>
+                <p class="product-price">$80.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -188,8 +188,8 @@
         <article class="product-card" data-category="Bolsos">
             <img src="Imagenes/B16.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Botas de Cuero</h3>
-                <p class="product-price">$180.00</p>
+                <h3 class="product-title">Billetera Negra</h3>
+                <p class="product-price">$80.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -197,8 +197,8 @@
         <article class="product-card" data-category="Bolsos">
             <img src="Imagenes/B17.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Chaqueta de Cuero Negro</h3>
-                <p class="product-price">$150.00</p>
+                <h3 class="product-title">Billetera Dorada
+                <p class="product-price">$80.00</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -206,7 +206,7 @@
         <article class="product-card" data-category="Bolsos">
             <img src="Imagenes/B18.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Bolso de Cuero Marrón</h3>
+                <h3 class="product-title">Biletera Plateado</h3>
                 <p class="product-price">$90.00</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
@@ -215,8 +215,8 @@
         <article class="product-card" data-category="Bolsos">
             <img src="Imagenes/B19.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Cinturón de Cuero</h3>
-                <p class="product-price">$45.00</p>
+                <h3 class="product-title">Bolso Marrón/h3>
+                <p class="product-price">$145.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -224,8 +224,8 @@
         <article class="product-card" data-category="Bolsos">
             <img src="Imagenes/B20.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Botas de Cuero</h3>
-                <p class="product-price">$180.00</p>
+                <h3 class="product-title">Botlso Elegante</h3>
+                <p class="product-price">$180.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -257,23 +257,6 @@
             </div>
         </article>
 
-        <article class="product-card" data-category="Bolsos">
-            <img src="Imagenes/B24.jpeg" alt="Producto" class="product-img">
-            <div class="product-info">
-                <h3 class="product-title">Botas de Cuero</h3>
-                <p class="product-price">$180.00</p>
-                <button class="add-to-cart">Añadir al Carrito</button>
-            </div>
-        </article>
-
-        <article class="product-card" data-category="Bolsos">
-            <img src="Imagenes/B25.jpeg" alt="Producto" class="product-img">
-            <div class="product-info">
-                <h3 class="product-title">Chaqueta de Cuero Negro</h3>
-                <p class="product-price">$150.00</p>
-                <button class="add-to-cart">Añadir al Carrito</button>
-            </div>
-        </article>
 
         <article class="product-card" data-category="Bolsos">
             <img src="Imagenes/B26.jpeg" alt="Producto" class="product-img">
@@ -305,8 +288,8 @@
         <article class="product-card" data-category="Correas">
             <img src="Imagenes/C1.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Cinturón de Cuero</h3>
-                <p class="product-price">$45.00</p>
+                <h3 class="product-title">Correa de Cuero</h3>
+                <p class="product-price">$90.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -314,8 +297,8 @@
         <article class="product-card" data-category="Correas">
             <img src="Imagenes/C2.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Botas de Cuero</h3>
-                <p class="product-price">$180.00</p>
+                <h3 class="product-title">Correa clasica</h3>
+                <p class="product-price">$80.00</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -323,8 +306,8 @@
         <article class="product-card" data-category="Correas">
             <img src="Imagenes/C3.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Chaqueta de Cuero Negro</h3>
-                <p class="product-price">$150.00</p>
+                <h3 class="product-title">Correa Chanel</h3>
+                <p class="product-price">$90.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -332,8 +315,8 @@
         <article class="product-card" data-category="Correas">
             <img src="Imagenes/C4.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Bolso de Cuero Marrón</h3>
-                <p class="product-price">$90.00</p>
+                <h3 class="product-title">Correa Chanel  palo Rosa</h3>
+                <p class="product-price">$90.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -341,8 +324,8 @@
         <article class="product-card" data-category="Correas">
             <img src="Imagenes/C5.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Cinturón de Cuero</h3>
-                <p class="product-price">$45.00</p>
+                <h3 class="product-title">Correa Chanel negra</h3>
+                <p class="product-price">$90.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -350,8 +333,8 @@
         <article class="product-card" data-category="Correas">
             <img src="Imagenes/C6.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Botas de Cuero</h3>
-                <p class="product-price">$180.00</p>
+                <h3 class="product-title">Correa chanel azul rey </h3>
+                <p class="product-price">$90.00</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -359,8 +342,8 @@
         <article class="product-card" data-category="Correas">
             <img src="Imagenes/C7.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Cinturón de Cuero</h3>
-                <p class="product-price">$45.00</p>
+                <h3 class="product-title">Correa chanel Marron</h3>
+                <p class="product-price">$90.00</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -368,8 +351,8 @@
         <article class="product-card" data-category="Correas">
             <img src="Imagenes/C8.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Botas de Cuero</h3>
-                <p class="product-price">$180.00</p>
+                <h3 class="product-title">Correa chanel roja</h3>
+                <p class="product-price">$90.00</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -377,8 +360,8 @@
         <article class="product-card" data-category="Correas">
             <img src="Imagenes/C9.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Chaqueta de Cuero Negro</h3>
-                <p class="product-price">$150.00</p>
+                <h3 class="product-title">Correa chanel dorada </h3>
+                <p class="product-price">$90.00</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -386,8 +369,8 @@
         <article class="product-card" data-category="Correas">
             <img src="Imagenes/C10.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Bolso de Cuero Marrón</h3>
-                <p class="product-price">$90.00</p>
+                <h3 class="product-title">Correa clasica blanca</h3>
+                <p class="product-price">$80.00</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -395,7 +378,7 @@
         <article class="product-card" data-category="Correas">
             <img src="Imagenes/C11.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Cinturón de Cuero</h3>
+                <h3 class="product-title">Correa clasica negra </h3>
                 <p class="product-price">$45.00</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
@@ -404,8 +387,8 @@
         <article class="product-card" data-category="Correas">
             <img src="Imagenes/C12.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Botas de Cuero</h3>
-                <p class="product-price">$180.00</p>
+                <h3 class="product-title">Correa chanel </h3>
+                <p class="product-price">$90.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -413,8 +396,8 @@
         <article class="product-card" data-category="Correas">
             <img src="Imagenes/C13.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Chaqueta de Cuero Negro</h3>
-                <p class="product-price">$150.00</p>
+                <h3 class="product-title">Correa chanel negra</h3>
+                <p class="product-price">$90.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -422,8 +405,8 @@
         <article class="product-card" data-category="Correas">
             <img src="Imagenes/C14.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Bolso de Cuero Marrón</h3>
-                <p class="product-price">$90.00</p>
+                <h3 class="product-title">correa clasica Marrón</h3>
+                <p class="product-price">$80.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -431,7 +414,7 @@
         <article class="product-card" data-category="Correas">
             <img src="Imagenes/C15.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Cinturón de Cuero</h3>
+                <h3 class="product-title">Correa clasica cafe</h3>
                 <p class="product-price">$45.00</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
@@ -440,8 +423,8 @@
         <article class="product-card" data-category="Correas">
             <img src="Imagenes/C16.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Botas de Cuero</h3>
-                <p class="product-price">$180.00</p>
+                <h3 class="product-title">Correa clasica roja</h3>
+                <p class="product-price">$80.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -449,8 +432,8 @@
         <article class="product-card" data-category="Correas">
             <img src="Imagenes/C17.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Cinturón de Cuero</h3>
-                <p class="product-price">$45.00</p>
+                <h3 class="product-title">Correa de Cuero negro</h3>
+                <p class="product-price">$80.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -458,7 +441,7 @@
         <article class="product-card" data-category="Correas">
             <img src="Imagenes/C18.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Botas de Cuero</h3>
+                <h3 class="product-title">zapatos samba rojos</h3>
                 <p class="product-price">$180.00</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
@@ -467,8 +450,8 @@
         <article class="product-card" data-category="Zapatos">
             <img src="Imagenes/T1.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Cinturón de Cuero</h3>
-                <p class="product-price">$45.00</p>
+                <h3 class="product-title">Zapatos casuales cafe </h3>
+                <p class="product-price">180.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -476,8 +459,8 @@
         <article class="product-card" data-category="Zapatos">
             <img src="Imagenes/T2.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Cinturón de Cuero</h3>
-                <p class="product-price">$45.00</p>
+                <h3 class="product-title">Zapatos casuales blancos</h3>
+                <p class="product-price">$180.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -485,7 +468,7 @@
         <article class="product-card" data-category="Zapatos">
             <img src="Imagenes/T3.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Botas de Cuero</h3>
+                <h3 class="product-title">Zapatos casuales cafe claro</h3>
                 <p class="product-price">$180.00</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
@@ -494,8 +477,8 @@
         <article class="product-card" data-category="Zapatos">
             <img src="Imagenes/T4.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Chaqueta de Cuero Negro</h3>
-                <p class="product-price">$150.00</p>
+                <h3 class="product-title">Zapatos casuales verdes</h3>
+                <p class="product-price">$180.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -503,8 +486,8 @@
         <article class="product-card" data-category="Zapatos">
             <img src="Imagenes/T5.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Bolso de Cuero Marrón</h3>
-                <p class="product-price">$90.00</p>
+                <h3 class="product-title">Zapatos casuales negros</h3>
+                <p class="product-price">$180.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -512,8 +495,8 @@
         <article class="product-card" data-category="Zapatos">
             <img src="Imagenes/T6.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Cinturón de Cuero</h3>
-                <p class="product-price">$45.00</p>
+                <h3 class="product-title">Zapatos mocasines multicolor</h3>
+                <p class="product-price">$145.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -521,8 +504,8 @@
         <article class="product-card" data-category="Zapatos">
             <img src="Imagenes/Z1.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Botas de Cuero</h3>
-                <p class="product-price">$180.00</p>
+                <h3 class="product-title">Zapatos mocasines multicolor</h3>
+                <p class="product-price">$160.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -530,7 +513,7 @@
         <article class="product-card" data-category="Bt">
             <img src="Imagenes/Z2.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Cinturón de Cuero</h3>
+                <h3 class="product-title">Chaqueta de Cuero</h3>
                 <p class="product-price">$45.00</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
@@ -539,8 +522,8 @@
          <article class="product-card" data-category="Chaqueta">
             <img src="Imagenes/CC1.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Botas de Cuero</h3>
-                <p class="product-price">$180.00</p>
+                <h3 class="product-title">Chaqueta de cuero marron</h3>
+                <p class="product-price">$350.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -548,8 +531,8 @@
          <article class="product-card" data-category="Chaquetas">
             <img src="Imagenes/CC2.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Botas de Cuero</h3>
-                <p class="product-price">$180.00</p>
+                <h3 class="product-title">Chaqueta de cuero roja</h3>
+                <p class="product-price">$350.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -557,8 +540,8 @@
          <article class="product-card" data-category="Chaquetas">
             <img src="Imagenes/CC3.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Botas de Cuero</h3>
-                <p class="product-price">$180.00</p>
+                <h3 class="product-title">Chaqueta de cuero marron</h3>
+                <p class="product-price">$350.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -566,8 +549,8 @@
          <article class="product-card" data-category="Chaquetas">
             <img src="Imagenes/CC4.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Botas de Cuero</h3>
-                <p class="product-price">$180.00</p>
+                <h3 class="product-title">Chaqueta de cuero negro</h3>
+                <p class="product-price">350.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -575,8 +558,9 @@
          <article class="product-card" data-category="Chaquetas">
             <img src="Imagenes/CC5.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Botas de Cuero</h3>
-                <p class="product-price">$180.00</p>
+                <h3 class="product-title">Chaqueta de cuero marron</h3>
+                <p class="product-price">$350.00
+                    0</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
@@ -671,12 +655,7 @@
             <p>&copy; 2025 Cuero y Moda. Todos los derechos reservados.</p>
         </div>
     </footer>
-
-    <div class="slider-box">
-    <ul>
-        <!-- tus co-->
-    </ul>
-    <script src="Style/principal/.js"></script>
+ <script src="Style/principal/.js"></script>
     
 
    <script>
@@ -846,12 +825,6 @@ function addCartItem({ title, price, imgSrc }) {
     }, 1200);
 }
 
-addToCartButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const product = getProductInfo(button);
-        addCartItem(product);
-    });
-});
 
 const checkoutBtn = document.getElementById('checkout-btn');
 
@@ -883,6 +856,7 @@ checkoutBtn.addEventListener('click', () => {
   <div style="background:#fff; border-radius:18px; max-width:340px; width:90vw; padding:24px; box-shadow:0 2px 12px rgba(0,0,0,0.18); position:relative;">
     <span id="close-modal" style="position:absolute; top:10px; right:18px; font-size:2rem; cursor:pointer;">&times;</span>
     <img id="modal-img" src="" alt="Producto" style="width:100%; border-radius:12px; margin-bottom:12px;">
+    <p id="modal-msg" style="color:#d32f2f; font-weight:bold; text-align:center; display:none; margin-bottom:12px;">No disponible</p>
     <h3 id="modal-title"></h3>
     <p id="modal-desc" style="margin-bottom:12px; color:#444;"></p>
     <label for="modal-color" style="font-weight:bold;">Color:</label>
@@ -910,7 +884,49 @@ const closeModal = document.getElementById('close-modal');
 let modalProduct = null;
 let modalImages = [];
 let modalImageIndex = 0;
+// Mostrar modal de perfil al hacer clic en el ícono de usuario
+const perfilBtn = document.getElementById('perfil-btn');
+const perfilModal = document.getElementById('perfil-modal');
+const closePerfilModal = document.getElementById('close-perfil-modal');
+const perfilNombre = document.getElementById('perfil-nombre');
+const perfilCorreo = document.getElementById('perfil-correo');
+const logoutBtn = document.getElementById('logout-btn');
 
+if (perfilBtn) {
+    perfilBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const usuario = JSON.parse(localStorage.getItem('usuario'));
+        if (usuario) {
+            perfilNombre.textContent = usuario.nombre;
+            perfilCorreo.textContent = usuario.correo;
+            perfilModal.style.display = 'flex';
+        } else {
+            // Si no hay sesión, redirige a registrarse
+            window.location.href = 'registrarse.html';
+        }
+    });
+}
+
+if (closePerfilModal) {
+    closePerfilModal.onclick = function() {
+        perfilModal.style.display = 'none';
+    };
+}
+
+if (logoutBtn) {
+    logoutBtn.onclick = function() {
+        localStorage.removeItem('usuario');
+        perfilModal.style.display = 'none';
+        window.location.href = 'registrarse.html';
+    };
+}
+
+// Cerrar modal al hacer clic fuera del cuadro
+window.addEventListener('click', function(e) {
+    if (e.target === perfilModal) {
+        perfilModal.style.display = 'none';
+    }
+});
 // Mostrar modal al dar clic en "Añadir al Carrito" (NO agregar al carrito aquí)
 document.querySelectorAll('.add-to-cart').forEach(btn => {
     btn.addEventListener('click', function(e){
@@ -945,11 +961,14 @@ modalColor.addEventListener('change', function() {
 
 // Función para actualizar imágenes según color
 function setModalImages(color) {
+    const modalMsg = document.getElementById('modal-msg');
     if (modalProduct.images[color] && modalProduct.images[color].length > 0) {
         modalImages = modalProduct.images[color];
+        modalMsg.style.display = "none";
     } else {
-        // Si no hay imágenes para ese color, usa la imagen principal
+        // Si no hay imágenes para ese color, usa la imagen principal y muestra mensaje
         modalImages = [modalProduct.defaultImg];
+        modalMsg.style.display = "block";
     }
 }
 
@@ -1016,6 +1035,10 @@ nextBtn.onclick = function() {
 
 // Cerrar modal
 closeModal.onclick = () => { modal.style.display = "none"; };
+closeModal.addEventListener('click', function() {
+    modal.style.display = "none";
+    document.getElementById('modal-msg').style.display = "none";
+});
 window.onclick = (e) => { if(e.target === modal) modal.style.display = "none"; };
 
 // Añadir al carrito desde el modal
@@ -1042,5 +1065,35 @@ modalAddBtn.onclick = () => {
     }
 };
 </script>
+
+<!-- Modal de perfil de usuario -->
+<div id="perfil-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.45); z-index:9999; align-items:center; justify-content:center;">
+  <div style="background:#fff; border-radius:18px; max-width:340px; width:90vw; padding:24px; box-shadow:0 2px 12px rgba(0,0,0,0.18); position:relative;">
+    <span id="close-perfil-modal" style="position:absolute; top:10px; right:18px; font-size:2rem; cursor:pointer;">&times;</span>
+    <h3>Mi Perfil</h3>
+    <p><strong>Nombre:</strong> <span id="perfil-nombre"></span></p>
+    <p><strong>Correo:</strong> <span id="perfil-correo"></span></p>
+    <button id="logout-btn" style="margin-top:18px;background:#d4af37;color:#fff;border:none;padding:10px 24px;border-radius:8px;cursor:pointer;">Cerrar sesión</button>
+  </div>
+</div>
+
+<script>
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+   
+    firebase.firestore().collection('c').doc(user.uid).get().then(function(doc) {
+      if (doc.exists) {
+        const datos = doc.data();
+        localStorage.setItem('usuario', JSON.stringify({
+          nombre: datos.nombre,
+          correo: user.email
+        }));
+      }
+    });
+  }
+});
+</script>
+
 </body>
+ 
 </html>
