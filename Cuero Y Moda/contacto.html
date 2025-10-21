@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="style/css/contacto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Asegura que el sidebar cubra toda la pantalla en móvil */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 0;
+            overflow-x: hidden;
+            background: #222;
+            transition: 0.3s;
+            z-index: 9999;
+            padding-top: 60px;
+        }
+        .sidebar.open {
+            width: 250px;
+        }
+        .sidebar .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 18px;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+        }
+        @media (max-width: 600px) {
+            .sidebar {
+                width: 0;
+            }
+            .sidebar.open {
+                width: 80vw;
+            }
+        }
+        body.menu-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-icons">
+            <i class="fas fa-bars" id="menu-icon" style="cursor:pointer;"></i>
+        </div>
+        <div class="logo">CUERO <span>Y MODA</span></div>
+    </header>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <span class="close-btn" id="sidebar-close">&times;</span>
+        <a href="Principal.html">Inicio</a>
+        <a href="catalogo.html">Catalogo</a>
+        <a href="contacto.html">Contacto</a>
+    </div>
+
+    <div class="main-content">
+        <section id="two" class="wrapper alt style2">
+            <section class="spotlight">
+                <article class="ubicacion">
+                    <img src="Imagenes/Local.jpeg" alt="LUGAR" class="img-local">
+
+                    <div class="mision-texto">
+                        <div class="mision">
+                            <h2>¿Quiénes somos?</h2>
+                            <p>Somos una marca apasionada por el cuero, la moda y los detalles que hacen la diferencia. Diseñamos y fabricamos accesorios, sombreros, chaquetas, zapatos y bolsos en cuero de alta calidad, combinando técnicas artesanales con tendencias modernas.</p>
+                        </div>
+                        
+                    </div>
+                </article>
+            </section>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>SOBRE NOSOTROS</h3>
+                <p>Cuero y Moda es una tienda especializada en prendas y accesorios de cuero de la más alta calidad.</p>
+            </div>
+            <div class="footer-section">
+                <h3>HORARIO</h3>
+                <p>Lunes a Viernes: 9:00AM - 7:00PM</p>
+                <p>Sábados: 9:00AM - 7:00PM</p>
+                <p>Domingos: Cerrado</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Cuero y Moda. Todos los derechos reservados.</p>
+        </div>
+        <ul class="footer-social">
+            <li>
+                <a href="https://m.facebook.com/cueroymodasogamoso/" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/cuero_y_moda_sogamoso/?hl=es" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            <li>
+                <a href="tel:+573144805949" title="Teléfono">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </li>
+        </ul>
+        <!-- Botón de ubicación -->
+        <a href="https://maps.google.com/?q=CRA+10+No.+15-40,+centro,+sogamoso,+boyacá" target="_blank" class="footer-location-btn" title="Ver ubicación">
+            <i class="fas fa-map-marker-alt"></i> Ubicación
+        </a>
+    </footer>
+
+    <script>
+        // Sidebar funcionalidad
+        const menuIcon = document.getElementById('menu-icon');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarClose = document.getElementById('sidebar-close');
+
+        menuIcon.addEventListener('click', () => {
+            sidebar.classList.add('open');
+            document.body.classList.add('menu-open');
+        });
+
+        sidebarClose.addEventListener('click', () => {
+            sidebar.classList.remove('open');
+            document.body.classList.remove('menu-open');
+        });
+
+        // Cerrar sidebar al hacer clic fuera de él en móvil
+        window.addEventListener('click', function(e) {
+            if (sidebar.classList.contains('open') && !sidebar.contains(e.target) && e.target !== menuIcon) {
+                sidebar.classList.remove('open');
+                document.body.classList.remove('menu-open');
+            }
+        });
+    </script>
+</body>
+</html>

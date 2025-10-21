@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo</title>
+    <link rel="stylesheet" href="style/css/catalogo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+    <div class="header-icons">
+        <i class="fas fa-bars" id="menu-icon"></i>
+        <a id="perfil-btn" style="cursor:pointer;"><i class="fas fa-user"></i></a>
+        <i class="fa-solid fa-filter" id="filterToggle"></i>
+                <i class="fas fa-shopping-cart" id="cart-icon"></i>
+<!-- Menú de categorías (oculto al inicio) -->
+<div id="filterMenu" style="display:none; margin:10px 0; padding:10px; background:#f4f4f4; border-radius:8px;">
+         <p><strong>Categorias:</strong></p>
+         <ul style="list-style:none; padding:0; margin:0;">
+        <li><button class="filter-option" data-category="Todos">Todos</button></li>
+        <li><button class="filter-option" data-category="Chaquetas">Chaquetas</button></li>
+        <li><button class="filter-option" data-category="Bolsos">Bolsos</button></li>
+        <li><button class="filter-option" data-category="Correas">Correas</button></li>
+        <li><button class="filter-option" data-category="Zapatos">Zapatos</button></li>
+    </ul>
+</div>
+
+       </div>   
+     
+    <div class="logo">CUERO <span>Y MODA</span></div>
+</header>
+         
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="close-btn" id="sidebar-close">&times;</a>
+        <a href="Principal.html">Inicio</a>
+        <a href="catalogo.html">Catalogo</a>
+        <a href="contacto.html">Contacto</a>
+    </div>
+
+    <!-- Carrito de compras -->
+    <div id="cart" class="cart">
+        <span class="close-btn" id="cart-close">&times;</span>
+        <h2>Tu Carrito</h2>
+        <div class="cart-items">
+            <div class="cart-item">
+            </div>
+        </div>
+        <div class="cart-total">
+            Total: 0
+        </div>
+        <button class="checkout-btn" id="checkout-btn">Proceder al Pago</button>
+    </div>
+    
+
+    <!-- Contenido principal --> 
+  <div class="products-grid">
+        <article class="product-card" data-category="Bolsos" data-images='{"Marrón":["Imagenes/B1.jpeg"],"Beige":["Imagenes/B3.jpeg"],"Blanco":["Imagenes/B5.jpeg"]}'>
+            <img src="Imagenes/B1.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Bolso de Cuero Marron</h3>
+                <p class="product-price">$150.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos" data-images='{"Beige":["Imagenes/B2.jpeg"],"Marrón":["Imagenes/.jpeg"],"Blanco":["Imagenes/.jpeg"]}'>
+            <img src="Imagenes/B2.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Bolso de Cuero beige</h3>
+                <p class="product-price">$130.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos" data-images='{"Negro":["Imagenes/B4.jpeg"]}'>
+            <img src="Imagenes/B4.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Bolso Negro</h3>
+                <p class="product-price">$140.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos"  data-images='{"Negro":["Imagenes/B28.jpeg"],"Rojo":["Imagenes/B27.jpeg"]}'>
+            <img src="Imagenes/B27.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Bolso de Cuero Rojo</h3>
+                <p class="product-price">$160.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B6.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Bolso de Cuero Marrón Vinotinto</h3>
+                <p class="product-price">$130.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B7.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Bolso de Cuero en Rojo</h3>
+                <p class="product-price">$145.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B8.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Bolso Rojo con Textura</h3>
+                <p class="product-price">$150.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B9.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Billetera Blanca</h3>
+                <p class="product-price">$100.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B10.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Bolso de Mano</h3>
+                <p class="product-price">$75.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B11.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Bolso Blanco Hueso</h3>
+                <p class="product-price">120.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B12.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Bolso Negro Elegante </h3>
+                <p class="product-price">$180.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B13.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Billetera Azul Cielo</h3>
+                <p class="product-price">$100.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B14.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Billetera Verde</h3>
+                <p class="product-price">$100.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B15.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Billetera Color Durazno</h3>
+                <p class="product-price">$80.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B16.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Billetera Negra</h3>
+                <p class="product-price">$80.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B17.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Billetera Dorada
+                <p class="product-price">$80.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B18.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Biletera Plateado</h3>
+                <p class="product-price">$90.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B19.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Bolso Marrón/h3>
+                <p class="product-price">$145.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B20.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Botlso Elegante</h3>
+                <p class="product-price">$180.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B21.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Chaqueta de Cuero Negro</h3>
+                <p class="product-price">$150.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B22.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Bolso de Cuero Marrón</h3>
+                <p class="product-price">$90.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B23.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Cinturón de Cuero</h3>
+                <p class="product-price">$45.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B26.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Bolso de Cuero Marrón</h3>
+                <p class="product-price">$90.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B29.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Chaqueta de Cuero Negro</h3>
+                <p class="product-price">$150.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bolsos">
+            <img src="Imagenes/B30.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Bolso de Cuero Marrón</h3>
+                <p class="product-price">$90.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Correas">
+            <img src="Imagenes/C1.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Correa de Cuero</h3>
+                <p class="product-price">$90.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Correas">
+            <img src="Imagenes/C2.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Correa clasica</h3>
+                <p class="product-price">$80.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Correas">
+            <img src="Imagenes/C3.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Correa Chanel</h3>
+                <p class="product-price">$90.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Correas">
+            <img src="Imagenes/C4.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Correa Chanel  palo Rosa</h3>
+                <p class="product-price">$90.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Correas">
+            <img src="Imagenes/C5.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Correa Chanel negra</h3>
+                <p class="product-price">$90.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Correas">
+            <img src="Imagenes/C6.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Correa chanel azul rey </h3>
+                <p class="product-price">$90.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Correas">
+            <img src="Imagenes/C7.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Correa chanel Marron</h3>
+                <p class="product-price">$90.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Correas">
+            <img src="Imagenes/C8.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Correa chanel roja</h3>
+                <p class="product-price">$90.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Correas">
+            <img src="Imagenes/C9.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Correa chanel dorada </h3>
+                <p class="product-price">$90.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Correas">
+            <img src="Imagenes/C10.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Correa clasica blanca</h3>
+                <p class="product-price">$80.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Correas">
+            <img src="Imagenes/C11.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Correa clasica negra </h3>
+                <p class="product-price">$45.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Correas">
+            <img src="Imagenes/C12.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Correa chanel </h3>
+                <p class="product-price">$90.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Correas">
+            <img src="Imagenes/C13.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Correa chanel negra</h3>
+                <p class="product-price">$90.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Correas">
+            <img src="Imagenes/C14.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">correa clasica Marrón</h3>
+                <p class="product-price">$80.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Correas">
+            <img src="Imagenes/C15.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Correa clasica cafe</h3>
+                <p class="product-price">$45.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Correas">
+            <img src="Imagenes/C16.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Correa clasica roja</h3>
+                <p class="product-price">$80.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Correas">
+            <img src="Imagenes/C17.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Correa de Cuero negro</h3>
+                <p class="product-price">$80.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Correas">
+            <img src="Imagenes/C18.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">zapatos samba rojos</h3>
+                <p class="product-price">$180.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Zapatos">
+            <img src="Imagenes/T1.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Zapatos casuales cafe </h3>
+                <p class="product-price">180.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Zapatos">
+            <img src="Imagenes/T2.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Zapatos casuales blancos</h3>
+                <p class="product-price">$180.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Zapatos">
+            <img src="Imagenes/T3.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Zapatos casuales cafe claro</h3>
+                <p class="product-price">$180.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Zapatos">
+            <img src="Imagenes/T4.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Zapatos casuales verdes</h3>
+                <p class="product-price">$180.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Zapatos">
+            <img src="Imagenes/T5.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Zapatos casuales negros</h3>
+                <p class="product-price">$180.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Zapatos">
+            <img src="Imagenes/T6.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Zapatos mocasines multicolor</h3>
+                <p class="product-price">$145.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Zapatos">
+            <img src="Imagenes/Z1.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Zapatos mocasines multicolor</h3>
+                <p class="product-price">$160.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        <article class="product-card" data-category="Bt">
+            <img src="Imagenes/Z2.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Chaqueta de Cuero</h3>
+                <p class="product-price">$45.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+         <article class="product-card" data-category="Chaqueta">
+            <img src="Imagenes/CC1.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Chaqueta de cuero marron</h3>
+                <p class="product-price">$350.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+         <article class="product-card" data-category="Chaquetas">
+            <img src="Imagenes/CC2.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Chaqueta de cuero roja</h3>
+                <p class="product-price">$350.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+         <article class="product-card" data-category="Chaquetas">
+            <img src="Imagenes/CC3.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Chaqueta de cuero marron</h3>
+                <p class="product-price">$350.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+         <article class="product-card" data-category="Chaquetas">
+            <img src="Imagenes/CC4.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Chaqueta de cuero negro</h3>
+                <p class="product-price">350.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+         <article class="product-card" data-category="Chaquetas">
+            <img src="Imagenes/CC5.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Chaqueta de cuero marron</h3>
+                <p class="product-price">$350.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+         <article class="product-card" data-category="Chaquetas">
+            <img src="Imagenes/CC6.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Botas de Cuero</h3>
+                <p class="product-price">$180.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+         <article class="product-card" data-category="Chaquetas">
+            <img src="Imagenes/CC7.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Botas de Cuero</h3>
+                <p class="product-price">$180.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+         <article class="product-card" data-category="Chaquetas">
+            <img src="Imagenes/CC8.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Botas de Cuero</h3>
+                <p class="product-price">$180.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+         <article class="product-card" data-category="Chaquetas">
+            <img src="Imagenes/CC9.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Botas de Cuero</h3>
+                <p class="product-price">$180.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+         <article class="product-card" data-category="Chaquetas">
+            <img src="Imagenes/CC10.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Botas de Cuero</h3>
+                <p class="product-price">$180.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+         <article class="product-card" data-category="Chaquetas">
+            <img src="Imagenes/CC11.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
+                <h3 class="product-title">Botas de Cuero</h3>
+                <p class="product-price">$180.00</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+
+        
+</div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>SOBRE NOSOTROS</h3>
+                <p>Cuero y Moda es una tienda especializada en prendas y accesorios de cuero de la más alta calidad.</p>
+            </div>
+            <div class="footer-section">
+                <h3>CONTACTO</h3>
+                <p><i class="fas fa-map-marker-alt"></i> CRA 10 No. 15-40, centro, sogamoso ,boyacá</p>
+                <p><i class="fas fa-phone"></i> +57 3144805949</p>
+                <p><i class="fas fa-envelope"></i> https://g.co/kgs/4fUtkYD</p>
+            </div>
+            <div class="footer-section">
+                <h3>HORARIO</h3>
+                <p>Lunes a Viernes: 9:00 - 20:00</p>
+                <p>Sábados: 10:00 - 18:00</p>
+                <p>Domingos: Cerrado</p>
+            </div>
+        </div>
+        <ul class="footer-social">
+            <li>
+                <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+                <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+                <a href="tel:+573001234567"><i class="fas fa-phone"></i></a>
+            </li>
+        </ul>
+        <div class="copyright">
+            <p>&copy; 2025 Cuero y Moda. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+ <script src="Style/principal/.js"></script>
+    
+
+   <script>
+    const filterToggle = document.getElementById("filterToggle");
+    const filterMenu = document.getElementById("filterMenu");
+    const productos = document.querySelectorAll(".product-card");
+    const filterOptions = document.querySelectorAll(".filter-option");
+
+    // Mostrar/ocultar menú al hacer click en el ícono
+    filterToggle.addEventListener("click", () => {
+        filterMenu.style.display = filterMenu.style.display === "none" ? "block" : "none";
+    });
+
+    // Filtrar productos según la categoría seleccionada y cerrar el menú
+    filterOptions.forEach(option => {
+        option.addEventListener("click", () => {
+            const category = option.getAttribute("data-category");
+
+            productos.forEach(producto => {
+if (category === "Todos" || producto.getAttribute("data-category") === category) {
+                    producto.style.display = "block";
+                } else {
+                    producto.style.display = "none";
+                }
+            });
+
+            // Cerrar el menú después de seleccionar
+            filterMenu.style.display = "none";
+
+            // Subir al inicio de la página
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    });
+
+    // Cerrar el menú al hacer clic fuera de él
+    document.addEventListener("click", function(event) {
+        if (
+            filterMenu.style.display === "block" &&
+            !filterMenu.contains(event.target) &&
+            event.target !== filterToggle
+        ) {
+            filterMenu.style.display = "none";
+        }
+    });
+</script>
+
+
+    <script>
+        // Funcionalidad del sidebar
+        const menuIcon = document.getElementById('menu-icon');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarClose = document.getElementById('sidebar-close');
+        
+        menuIcon.addEventListener('click', () => {
+            sidebar.style.width = '250px';
+        });
+        
+        sidebarClose.addEventListener('click', () => {
+            sidebar.style.width = '0';
+        });
+        
+        // Funcionalidad del carrito
+        
+        const cartIcon = document.getElementById('cart-icon');
+        const cart = document.getElementById('cart');
+        const cartClose = document.getElementById('cart-close');
+        
+        cartIcon.addEventListener('click', () => {
+            cart.style.width = '350px';
+        });
+        
+        cartClose.addEventListener('click', () => {
+            cart.style.width = '0';
+        });
+        
+        // Añadir al carrito
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const cartItemsContainer = document.querySelector('.cart-items');
+        const cartTotal = document.querySelector('.cart-total');
+
+        // --- Carrito persistente con localStorage ---
+function getCart() {
+    return JSON.parse(localStorage.getItem('cart')) || [];
+}
+
+function saveCart(cart) {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function renderCart() {
+    const cart = getCart();
+    cartItemsContainer.innerHTML = '';
+    let total = 0;
+    cart.forEach((item, idx) => {
+        total += parseFloat(item.price.replace('$', '').replace(',', '.')) * item.qty;
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+        cartItem.innerHTML = `
+            <img src="${item.imgSrc}" alt="Producto" style="width:60px;height:auto;">
+            <div class="cart-item-info">
+                <h4>${item.title}</h4>
+                <p class="cart-item-price" style="display:none;">${item.price}</p>
+                <div class="cart-item-controls">
+                    <button class="cart-item-minus">-</button>
+                    <span class="cart-item-qty">${item.qty}</span>
+                    <button class="cart-item-plus">+</button>
+                    <button class="cart-item-delete" title="Eliminar">&#10006;</button>
+                </div>
+                <span class="cart-item-price-show">${item.price}</span>
+            </div>
+        `;
+        // Botón +
+        cartItem.querySelector('.cart-item-plus').addEventListener('click', () => {
+            item.qty += 1;
+            saveCart(cart);
+            renderCart();
+        });
+        // Botón -
+        cartItem.querySelector('.cart-item-minus').addEventListener('click', () => {
+            if (item.qty > 1) {
+                item.qty -= 1;
+            } else {
+                cart.splice(idx, 1);
+            }
+            saveCart(cart);
+            renderCart();
+        });
+        // Botón eliminar
+        cartItem.querySelector('.cart-item-delete').addEventListener('click', () => {
+            cart.splice(idx, 1);
+            saveCart(cart);
+            renderCart();
+        });
+        cartItemsContainer.appendChild(cartItem);
+    });
+    cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+}
+
+// Al cargar la página, muestra el carrito guardado
+document.addEventListener('DOMContentLoaded', renderCart);
+
+function getProductInfo(button) {
+    const productCard = button.closest('.product-card');
+    const title = productCard.querySelector('.product-title').textContent;
+    const price = productCard.querySelector('.product-price').textContent;
+    const imgSrc = productCard.querySelector('img').src;
+    return { title, price, imgSrc };
+}
+
+function addCartItem({ title, price, imgSrc }) {
+    let cart = getCart();
+    const index = cart.findIndex(item => item.title === title);
+
+    if (index !== -1) {
+        cart[index].qty += 1;
+    } else {
+        cart.push({ title, price, imgSrc, qty: 1 });
+    }
+    saveCart(cart);
+    renderCart();
+
+    // Mostrar mensaje "añadido al carrito"
+    const cartMessage = document.getElementById('cart-message');
+    cartMessage.style.display = 'block';
+    setTimeout(() => {
+        cartMessage.style.display = 'none';
+    }, 1200);
+}
+
+
+const checkoutBtn = document.getElementById('checkout-btn');
+
+checkoutBtn.addEventListener('click', () => {
+    const cart = getCart();
+    if (cart.length === 0) {
+        alert('El carrito está vacío.');
+        return;
+    }
+    let mensaje = '¡Hola! Quiero hacer este pedido:\n';
+    cart.forEach(item => {
+        mensaje += `• ${item.title} (${item.qty}) - ${item.price}\n`;
+    });
+    mensaje += `Total: ${cartTotal.textContent.replace('Total:', '').trim()}`;
+
+    // Número de WhatsApp destino (cambia por el tuyo)
+    const numero = '573144805949';
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
+});
+    </script>
+
+<div id="cart-message" style="display:none;position:fixed;top:30px;left:50%;transform:translateX(-50%);background:#d4af37;color:#fff;padding:12px 32px;border-radius:25px;z-index:9999;font-size:1.2rem;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
+    Añadido al carrito
+</div>
+
+<!-- Modal para seleccionar color y ver descripción -->
+<div id="product-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.45); z-index:9999; align-items:center; justify-content:center;">
+  <div style="background:#fff; border-radius:18px; max-width:340px; width:90vw; padding:24px; box-shadow:0 2px 12px rgba(0,0,0,0.18); position:relative;">
+    <span id="close-modal" style="position:absolute; top:10px; right:18px; font-size:2rem; cursor:pointer;">&times;</span>
+    <img id="modal-img" src="" alt="Producto" style="width:100%; border-radius:12px; margin-bottom:12px;">
+    <p id="modal-msg" style="color:#d32f2f; font-weight:bold; text-align:center; display:none; margin-bottom:12px;">Disponible En Un Solo Color</p>
+    <h3 id="modal-title"></h3>
+    <p id="modal-desc" style="margin-bottom:12px; color:#444;"></p>
+    <label for="modal-color" style="font-weight:bold;">Color:</label>
+    <select id="modal-color" style="width:100%; margin-bottom:18px; padding:7px; border-radius:8px; border:1px solid #d4af37;">
+      <option value="Negro">Negro</option>
+      <option value="Marrón">Marrón</option>
+      <option value="Beige">Beige</option>
+      <option value="Blanco">Blanco</option>
+      <option value="Rojo">Rojo</option>
+    </select>
+    <button id="modal-add-btn" style="width:100%; background:#d4af37; color:#fff; border:none; border-radius:8px; padding:10px; font-size:1rem; font-weight:bold; cursor:pointer;">Añadir al Carrito</button>
+  </div>
+</div>
+
+<script>
+// Modal elementos
+const modal = document.getElementById('product-modal');
+const modalImg = document.getElementById('modal-img');
+const modalTitle = document.getElementById('modal-title');
+const modalDesc = document.getElementById('modal-desc');
+const modalColor = document.getElementById('modal-color');
+const modalAddBtn = document.getElementById('modal-add-btn');
+const closeModal = document.getElementById('close-modal');
+
+let modalProduct = null;
+let modalImages = [];
+let modalImageIndex = 0;
+// Mostrar modal de perfil al hacer clic en el ícono de usuario
+const perfilBtn = document.getElementById('perfil-btn');
+const perfilModal = document.getElementById('perfil-modal');
+const closePerfilModal = document.getElementById('close-perfil-modal');
+const perfilNombre = document.getElementById('perfil-nombre');
+const perfilCorreo = document.getElementById('perfil-correo');
+const logoutBtn = document.getElementById('logout-btn');
+
+if (perfilBtn) {
+    perfilBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const usuario = JSON.parse(localStorage.getItem('usuario'));
+        if (usuario) {
+            perfilNombre.textContent = usuario.nombre;
+            perfilCorreo.textContent = usuario.correo;
+            perfilModal.style.display = 'flex';
+        } else {
+            // Si no hay sesión, redirige a registrarse
+            window.location.href = 'registrarse.html';
+        }
+    });
+}
+
+if (closePerfilModal) {
+    closePerfilModal.onclick = function() {
+        perfilModal.style.display = 'none';
+    };
+}
+
+if (logoutBtn) {
+    logoutBtn.onclick = function() {
+        localStorage.removeItem('usuario');
+        perfilModal.style.display = 'none';
+        window.location.href = 'registrarse.html';
+    };
+}
+
+// Cerrar modal al hacer clic fuera del cuadro
+window.addEventListener('click', function(e) {
+    if (e.target === perfilModal) {
+        perfilModal.style.display = 'none';
+    }
+});
+// Mostrar modal al dar clic en "Añadir al Carrito" (NO agregar al carrito aquí)
+document.querySelectorAll('.add-to-cart').forEach(btn => {
+    btn.addEventListener('click', function(e){
+        e.preventDefault();
+        const card = btn.closest('.product-card');
+        modalProduct = {
+            title: card.querySelector('.product-title').textContent,
+            price: card.querySelector('.product-price').textContent,
+            desc: card.querySelector('.product-desc') ? card.querySelector('.product-desc').textContent : 'Sin descripción',
+            images: JSON.parse(card.getAttribute('data-images') || '{}'),
+            defaultImg: card.querySelector('img').src
+        };
+        modalColor.value = "Negro";
+        setModalImages("Negro");
+        modalImageIndex = 0;
+        updateModalImage();
+        modalTitle.textContent = modalProduct.title;
+        modalDesc.textContent = modalProduct.desc;
+        modal.style.display = "flex";
+        updateCarouselButtons();
+    });
+});
+
+// Cambiar imagen al seleccionar color
+modalColor.addEventListener('change', function() {
+    const color = modalColor.value;
+    setModalImages(color);
+    modalImageIndex = 0;
+    updateModalImage();
+    updateCarouselButtons();
+});
+
+// Función para actualizar imágenes según color
+function setModalImages(color) {
+    const modalMsg = document.getElementById('modal-msg');
+    if (modalProduct.images[color] && modalProduct.images[color].length > 0) {
+        modalImages = modalProduct.images[color];
+        modalMsg.style.display = "none";
+    } else {
+        // Si no hay imágenes para ese color, usa la imagen principal y muestra mensaje
+        modalImages = [modalProduct.defaultImg];
+        modalMsg.style.display = "block";
+    }
+}
+
+// Carrusel: botones anterior y siguiente
+const modalImgBox = modalImg.parentNode; // El div que envuelve la imagen
+
+// Crear botones del carrusel
+const prevBtn = document.createElement('button');
+prevBtn.innerHTML = '&#60;';
+prevBtn.style.position = 'absolute';
+prevBtn.style.left = '10px';
+prevBtn.style.top = '50%';
+prevBtn.style.transform = 'translateY(-50%)';
+prevBtn.style.background = '#d4af37';
+prevBtn.style.color = '#fff';
+prevBtn.style.border = 'none';
+prevBtn.style.borderRadius = '50%';
+prevBtn.style.width = '32px';
+prevBtn.style.height = '32px';
+prevBtn.style.fontSize = '1.2rem';
+prevBtn.style.cursor = 'pointer';
+prevBtn.style.zIndex = '2';
+
+const nextBtn = document.createElement('button');
+nextBtn.innerHTML = '&#62;';
+nextBtn.style.position = 'absolute';
+nextBtn.style.right = '10px';
+nextBtn.style.top = '50%';
+nextBtn.style.transform = 'translateY(-50%)';
+nextBtn.style.background = '#d4af37';
+nextBtn.style.color = '#fff';
+nextBtn.style.border = 'none';
+nextBtn.style.borderRadius = '50%';
+nextBtn.style.width = '32px';
+nextBtn.style.height = '32px';
+nextBtn.style.fontSize = '1.2rem';
+nextBtn.style.cursor = 'pointer';
+nextBtn.style.zIndex = '2';
+
+function updateCarouselButtons() {
+    // Elimina si ya existen
+    if (modalImgBox.contains(prevBtn)) modalImgBox.removeChild(prevBtn);
+    if (modalImgBox.contains(nextBtn)) modalImgBox.removeChild(nextBtn);
+    if (modalImages.length > 1) {
+        modalImgBox.appendChild(prevBtn);
+        modalImgBox.appendChild(nextBtn);
+    }
+}
+
+function updateModalImage() {
+    modalImg.src = modalImages[modalImageIndex];
+    modalImg.style.display = "block";
+    document.getElementById('no-img-text')?.remove();
+}
+
+prevBtn.onclick = function() {
+    modalImageIndex = (modalImageIndex - 1 + modalImages.length) % modalImages.length;
+    updateModalImage();
+};
+nextBtn.onclick = function() {
+    modalImageIndex = (modalImageIndex + 1) % modalImages.length;
+    updateModalImage();
+};
+
+// Cerrar modal
+closeModal.onclick = () => { modal.style.display = "none"; };
+closeModal.addEventListener('click', function() {
+    modal.style.display = "none";
+    document.getElementById('modal-msg').style.display = "none";
+});
+window.onclick = (e) => { if(e.target === modal) modal.style.display = "none"; };
+
+// Añadir al carrito desde el modal
+modalAddBtn.onclick = () => {
+    if (!modalProduct) return;
+    const color = modalColor.value;
+    let cart = getCart();
+    const index = cart.findIndex(item => item.title === modalProduct.title && item.color === color);
+    let imgToSave = modalImages[modalImageIndex];
+    if (index !== -1) {
+        cart[index].qty += 1;
+    } else {
+        cart.push({ title: modalProduct.title, price: modalProduct.price, imgSrc: imgToSave, color: color, qty: 1 });
+    }
+    saveCart(cart);
+    renderCart();
+    modal.style.display = "none";
+    // Mensaje de añadido
+    const cartMessage = document.getElementById('cart-message');
+    if(cartMessage){
+        cartMessage.textContent = "Añadido al carrito";
+        cartMessage.style.display = 'block';
+        setTimeout(() => { cartMessage.style.display = 'none'; }, 1200);
+    }
+};
+</script>
+
+<!-- Modal de perfil de usuario -->
+<div id="perfil-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.45); z-index:9999; align-items:center; justify-content:center;">
+  <div style="background:#fff; border-radius:18px; max-width:340px; width:90vw; padding:24px; box-shadow:0 2px 12px rgba(0,0,0,0.18); position:relative;">
+    <span id="close-perfil-modal" style="position:absolute; top:10px; right:18px; font-size:2rem; cursor:pointer;">&times;</span>
+    <h3>Mi Perfil</h3>
+    <p><strong>Nombre:</strong> <span id="perfil-nombre"></span></p>
+    <p><strong>Correo:</strong> <span id="perfil-correo"></span></p>
+    <button id="logout-btn" style="margin-top:18px;background:#d4af37;color:#fff;border:none;padding:10px 24px;border-radius:8px;cursor:pointer;">Cerrar sesión</button>
+  </div>
+</div>
+
+<!-- Firebase App (core) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<!-- Firebase Auth -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<!-- Firebase Firestore -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+<script>
+  // Tu configuración de Firebase
+  const firebaseConfig = {
+      apiKey: "AIzaSyD9mZUrasrWZc1y2w4bP0EDGNnXHmk0pGM",
+      authDomain: "cuero-y-moda.firebaseapp.com",
+      projectId: "cuero-y-moda",
+      storageBucket: "cuero-y-moda.appspot.com",
+      messagingSenderId: "691693792181",
+      appId: "1:691693792181:web:e6aa7f882e7a8a371787fc",
+      measurementId: "G-CGFHZ7W111"
+  };
+  // Inicializa Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Guarda datos del usuario en localStorage si está logueado
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      firebase.firestore().collection('c').doc(user.uid).get().then(function(doc) {
+        if (doc.exists) {
+          const datos = doc.data();
+          localStorage.setItem('usuario', JSON.stringify({
+            nombre: datos.nombre,
+            correo: user.email
+          }));
+        }
+      });
+    }
+  });
+</script>
+</body>
+ 
+</html>

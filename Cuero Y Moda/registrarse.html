@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro</title>
+  <link rel="stylesheet" href="style/css/login.css">
+</head>
+<body>
+  <div class="formulario">
+    <h1>Bienvenido</h1>
+    <form id="registroForm">
+      <div class="username">
+        <input type="text" id="nombre" name="nombre" required>
+        <label> Nombre:</label>
+      </div>
+      <div class="username">
+        <input type="email" id="email" name="email" required>
+        <label> Email:</label>
+      </div>
+      <div class="username">
+        <input type="password" id="password" name="password" required>
+        <label> Contraseña:</label>
+      </div>
+      
+      <input type="submit" value="Registrarse">
+      <div class="registrarse">
+        ¿Ya tienes una cuenta? <a href="login.html">Iniciar sesión</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Firebase -->
+  <script type="module">
+    // Importa Firebase
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+    // Configuración de Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyD9mZUrasrWZc1y2w4bP0EDGNnXHmk0pGM",
+      authDomain: "cuero-y-moda.firebaseapp.com",
+      projectId: "cuero-y-moda",
+      storageBucket: "cuero-y-moda.firebasestorage.app",
+      messagingSenderId: "691693792181",
+      appId: "1:691693792181:web:e6aa7f882e7a8a371787fc",
+      measurementId: "G-CGFHZ7W111"
+    };
+
+    // Inicializar Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    // Capturar el formulario
+    const registroForm = document.getElementById("registroForm");
+
+    registroForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombre").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      try {
+        // Crear usuario en Authentication
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+
+        // Guardar datos extra en Firestore
+        await setDoc(doc(db, "usuarios", user.uid), {
+          nombre: nombre,
+          email: email,
+          uid: user.uid
+        });
+
+        alert("✅ Registro exitoso. Ahora puedes iniciar sesión.");
+        registroForm.reset();
+        window.location.href = "login.html"; // Redirigir al login
+      } catch (error) {
+        console.error("Error en el registro:", error.message);
+        alert("❌ " + error.message);
+      }
+    });
+  </script>
+</body>
+</html>

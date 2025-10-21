@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    <link rel="stylesheet" href="style/css/principal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+    <div class="header-icons">
+        <i class="fas fa-bars" id="menu-icon"></i>
+        <a href="registrarse.html"><i class="fas fa-user"></i></a>
+       
+       <!-- <i class="fas fa-shopping-cart" id="cart-icon"></i>-->
+    </div>
+    <div class="logo">CUERO <span>Y MODA</span></div>
+</header>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+  <a href="javascript:void(0)" class="close-btn" id="sidebar-close">&times;</a>
+  <div class="menu-item">
+    <a href="catalogo.html">Catálogo</a>
+  </div>
+  <a href="contacto.html">Contacto</a>
+</div>
+    </div>
+
+    <!-- Carrito de compras -->
+    <div id="cart" class="cart">
+        <span class="close-btn" id="cart-close">&times;</span>
+        <h2>Tu Carrito</h2>
+        <div class="cart-items"></div>
+        <div class="cart-total">Total: $0</div>
+        <button class="checkout-btn" id="checkout-btn">Proceder al Pago</button>
+    </div>
+<!--Carrusel -->
+<div class="slider-box">
+    <ul>
+        <li>
+            <img src="Imagenes/B10.jpeg" alt="Imagen 1">
+        </li>
+        <li>
+            <img src="Imagenes/C3.jpeg" alt="Imagen 2">
+        </li>
+        <li>
+            <img src="Imagenes/B11.jpeg" alt="Imagen 3">
+        </li>
+        <li>
+            <img src="Imagenes/B12.jpeg" alt="Imagen 1">
+        </li>
+        <li>
+            <img src="Imagenes/C2.jpeg" alt="Imagen 2">
+        </li>
+        <li>
+            <img src="Imagenes/B3.jpeg" alt="Imagen 3">
+        </li>
+        <li>
+            <img src="Imagenes/B10.jpeg" alt="Imagen 1">
+        </li>
+        <li>
+            <img src="Imagenes/C3.jpeg" alt="Imagen 2">
+        </li>
+        <li>
+            <img src="Imagenes/B11.jpeg" alt="Imagen 3">
+        </li>
+         <li>
+            <img src="Imagenes/L2.jpeg" alt="Imagen 3">
+        </li>
+    </ul>
+    <a href="catalogo.html" class="carrusel-boton">Ver colección</a>
+</div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>SOBRE NOSOTROS</h3>
+                <p>Cuero y Moda es una tienda especializada en prendas y accesorios de cuero de la más alta calidad.</p>
+            </div>
+            <div class="footer-section">
+                <h3>CONTACTO</h3>
+                <p><i class="fas fa-map-marker-alt"></i> CRA 10 No. 15-40, centro, sogamoso ,boyacá</p>
+                <p><i class="fas fa-phone"></i> +57 3144805949</p>
+                <p><i class="fas fa-envelope"></i> https://g.co/kgs/4fUtkYD</p>
+            </div>
+            <div class="footer-section">
+                <h3>HORARIO</h3>
+                <p>Lunes a Viernes: 9:00AM - 7:00PM</p>
+                <p>Sábados: 9:00AM - 7:00PM</p>
+                <p>Domingos: Cerrado</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Cuero y Moda. Todos los derechos reservados.</p>
+        </div>
+                <ul class="footer-social">
+    <li>
+        <a href="https://m.facebook.com/cueroymodasogamoso/" target="_blank" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+    </li>
+    <li>
+        <a href="https://www.instagram.com/cuero_y_moda_sogamoso/?hl=es" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </li>
+    <li>
+        <a href="tel:+573144805949" title="Teléfono">
+            <i class="fas fa-phone"></i>
+        </a>
+    </li>
+</ul>				
+    </footer>
+
+    <script>
+        // Funcionalidad del sidebar
+        const menuIcon = document.getElementById('menu-icon');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarClose = document.getElementById('sidebar-close');
+        
+        menuIcon.addEventListener('click', () => {
+            sidebar.style.width = '250px';
+        });
+        
+        sidebarClose.addEventListener('click', () => {
+            sidebar.style.width = '0';
+        });
+        
+        // Funcionalidad del carrito
+        const cartIcon = document.getElementById('cart-icon');
+        const cart = document.getElementById('cart');
+        const cartClose = document.getElementById('cart-close');
+        
+        cartIcon.addEventListener('click', () => {
+            cart.style.width = '350px';
+        });
+        
+        cartClose.addEventListener('click', () => {
+            cart.style.width = '0';
+        });
+        
+        // --- Carrito persistente con localStorage ---
+function getCart() {
+    return JSON.parse(localStorage.getItem('cart')) || [];
+}
+
+function saveCart(cart) {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function renderCart() {
+    const cart = getCart();
+    cartItemsContainer.innerHTML = '';
+    let total = 0;
+    cart.forEach(item => {
+        total += parseFloat(item.price.replace('$', '').replace(',', '.')) * item.qty;
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+        cartItem.innerHTML = `
+            <img src="${item.imgSrc}" alt="Producto" style="width:60px;height:auto;">
+            <div class="cart-item-info">
+                <h4>${item.title}</h4>
+                <p class="cart-item-price" style="display:none;">${item.price}</p>
+                <div class="cart-item-controls">
+                    <button class="cart-item-minus">-</button>
+                    <span class="cart-item-qty">${item.qty}</span>
+                    <button class="cart-item-plus">+</button>
+                </div>
+                <span class="cart-item-price-show">${item.price}</span>
+            </div>
+        `;
+        // Botón +
+        cartItem.querySelector('.cart-item-plus').addEventListener('click', () => {
+            item.qty += 1;
+            saveCart(cart);
+            renderCart();
+        });
+        // Botón -
+        cartItem.querySelector('.cart-item-minus').addEventListener('click', () => {
+            if (item.qty > 1) {
+                item.qty -= 1;
+            } else {
+                cart.splice(cart.indexOf(item), 1);
+            }
+            saveCart(cart);
+            renderCart();
+        });
+        cartItemsContainer.appendChild(cartItem);
+    });
+    cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+}
+
+// Al cargar la página, muestra el carrito guardado
+document.addEventListener('DOMContentLoaded', renderCart);
+
+function getProductInfo(button) {
+    const productCard = button.closest('.product-card');
+    const title = productCard.querySelector('.product-title').textContent;
+    const price = productCard.querySelector('.product-price').textContent;
+    const imgSrc = productCard.querySelector('img').src;
+    return { title, price, imgSrc };
+}
+
+function addCartItem({ title, price, imgSrc }) {
+    let cart = getCart();
+    const index = cart.findIndex(item => item.title === title);
+
+    if (index !== -1) {
+        cart[index].qty += 1;
+    } else {
+        cart.push({ title, price, imgSrc, qty: 1 });
+    }
+    saveCart(cart);
+    renderCart();
+
+    // Mostrar mensaje "añadido al carrito"
+    const cartMessage = document.getElementById('cart-message');
+    cartMessage.style.display = 'block';
+    setTimeout(() => {
+        cartMessage.style.display = 'none';
+    }, 1200);
+}
+
+addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const product = getProductInfo(button);
+        addCartItem(product);
+    });
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style/css/login.css">
+
+    <!-- Firebase -->
+    <script type="module">
+        // Importar SDKs de Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        // ⚡ Tu configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyD9mZUrasrWZc1y2w4bP0EDGNnXHmk0pGM",
+            authDomain: "cuero-y-moda.firebaseapp.com",
+            projectId: "cuero-y-moda",
+            storageBucket: "cuero-y-moda.firebasestorage.app",
+            messagingSenderId: "691693792181",
+            appId: "1:691693792181:web:e6aa7f882e7a8a371787fc",
+            measurementId: "G-CGFHZ7W111"
+        };
+
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Esperar al DOM
+        window.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("login-form");
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                
+                const email = document.getElementById("email").value;
+                const password = document.getElementById("password").value;
+
+                // Iniciar sesión en Firebase
+                signInWithEmailAndPassword(auth, email, password)
+                    .then(() => {
+                        alert("✅ Sesión iniciada correctamente");
+                        window.location.href = "Principal.html"; // Redirigir
+                    })
+                    .catch((error) => {
+                        alert("❌ Error: " + error.message);
+                    });
+            });
+        });
+//información del usuario
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            firebase.firestore().collection('c').doc(user.uid).get().then(function(doc) {
+              if (doc.exists) {
+                const datos = doc.data();
+                // Guarda los datos en localStorage
+                localStorage.setItem('usuario', JSON.stringify({
+                  nombre: datos.nombre,
+                  correo: user.email
+                }));
+         window.location.href = "catalogo.html";
+              }
+            });
+          }
+        });
+    </script>
+</head>
+<body>
+    <div class="formulario">
+        <h1>Bienvenido</h1>
+        <form id="login-form">
+            <div class="username">
+                <input type="email" id="email" required>
+                <label>Email:</label>
+            </div>
+            <div class="username">
+                <input type="password" id="password" required>
+                <label>Contraseña:</label>
+            </div>
+            <div class="recordar">
+                ¿Olvidaste tu contraseña?
+                <a href="recuperar.html">Recuperar</a>
+            </div>
+            <input type="submit" value="Iniciar Sesión">
+            <div class="registrarse">
+                ¿No tienes una cuenta? <a href="registrarse.html">Regístrate</a>
+            </div>
+            <a href="Principal.html" class="volver">Volver al inicio</a>
+        </form>
+    </div>
+</body>
+</html>

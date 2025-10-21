@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña</title>
+    <link rel="stylesheet" href="style/css/login.css">
+
+    <!-- Firebase -->
+    <script type="module">
+        // Importar Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        // ⚡ Tu configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyD9mZUrasrWZc1y2w4bP0EDGNnXHmk0pGM",
+            authDomain: "cuero-y-moda.firebaseapp.com",
+            projectId: "cuero-y-moda",
+            storageBucket: "cuero-y-moda.firebasestorage.app",
+            messagingSenderId: "691693792181",
+            appId: "1:691693792181:web:e6aa7f882e7a8a371787fc",
+            measurementId: "G-CGFHZ7W111"
+        };
+
+        // Inicializar Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        window.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("reset-form");
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                const email = document.getElementById("email").value;
+
+                sendPasswordResetEmail(auth, email)
+                    .then(() => {
+                        alert("📩 Se ha enviado un enlace a tu correo para restablecer la contraseña.");
+                        window.location.href = "login.html"; // Regresar al login
+                    })
+                    .catch((error) => {
+                        alert("❌ Error: " + error.message);
+                    });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="formulario">
+        <h1>Recuperar Contraseña</h1>
+        <form id="reset-form">
+            <div class="username">
+                <input type="email" id="email" required>
+                <label>Email:</label>
+            </div>
+            <input type="submit" value="Enviar enlace">
+            <div class="registrarse">
+                ¿No tienes una cuenta? <a href="registrarse.html">Regístrate</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
