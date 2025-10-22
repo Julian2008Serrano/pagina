@@ -31,7 +31,21 @@
 
        </div>   
      
+<div class="logo-container">
+<div class="logo-container">
     <div class="logo">CUERO <span>Y MODA</span></div>
+    <!-- Aquí aparecerá el nombre del usuario -->
+    <div class="user-welcome" id="user-welcome" style="display:none;">
+        <i class="fas fa-user-circle"></i>
+        <span id="user-name-header"></span>
+    </div>
+</div>
+
+    <div class="user-welcome" id="user-welcome" style="display:none;">
+        <i class="fas fa-user-circle"></i>
+        <span id="user-name-header"></span>
+    </div>
+</div>
 </header>
          
     <!-- Sidebar -->
@@ -432,7 +446,7 @@
         <article class="product-card" data-category="Correas">
             <img src="Imagenes/C17.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Correa de Cuero negro</h3>
+                <h3 class="product-title">Correa de Cuero cafe</h3>
                 <p class="product-price">$80.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
@@ -441,7 +455,7 @@
         <article class="product-card" data-category="Correas">
             <img src="Imagenes/C18.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">zapatos samba rojos</h3>
+                <h3 class="product-title">Correa de cuero azul</h3>
                 <p class="product-price">$180.00</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
@@ -450,7 +464,7 @@
         <article class="product-card" data-category="Zapatos">
             <img src="Imagenes/T1.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Zapatos casuales cafe </h3>
+                <h3 class="product-title">Zapatos samba rojos </h3>
                 <p class="product-price">180.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
@@ -459,25 +473,25 @@
         <article class="product-card" data-category="Zapatos">
             <img src="Imagenes/T2.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
+                <h3 class="product-title">Zapatos casuales cafes</h3>
+                <p class="product-price">$180.000</p>
+                <button class="add-to-cart">Añadir al Carrito</button>
+            </div>
+        </article>
+      <article class="product-card" data-category="Zapatos">
+            <img src="Imagenes/T3.jpeg" alt="Producto" class="product-img">
+            <div class="product-info">
                 <h3 class="product-title">Zapatos casuales blancos</h3>
                 <p class="product-price">$180.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
         </article>
 
-        <article class="product-card" data-category="Zapatos">
-            <img src="Imagenes/T3.jpeg" alt="Producto" class="product-img">
-            <div class="product-info">
-                <h3 class="product-title">Zapatos casuales cafe claro</h3>
-                <p class="product-price">$180.00</p>
-                <button class="add-to-cart">Añadir al Carrito</button>
-            </div>
-        </article>
 
         <article class="product-card" data-category="Zapatos">
             <img src="Imagenes/T4.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Zapatos casuales verdes</h3>
+                <h3 class="product-title">Zapatos casuales cafes </h3>
                 <p class="product-price">$180.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
@@ -486,7 +500,7 @@
         <article class="product-card" data-category="Zapatos">
             <img src="Imagenes/T5.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Zapatos casuales negros</h3>
+                <h3 class="product-title">Zapatos casuales verdes</h3>
                 <p class="product-price">$180.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
@@ -495,7 +509,7 @@
         <article class="product-card" data-category="Zapatos">
             <img src="Imagenes/T6.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Zapatos mocasines multicolor</h3>
+                <h3 class="product-title">Zapatos casuales negros</h3>
                 <p class="product-price">$145.000</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
@@ -513,7 +527,7 @@
         <article class="product-card" data-category="Bt">
             <img src="Imagenes/Z2.jpeg" alt="Producto" class="product-img">
             <div class="product-info">
-                <h3 class="product-title">Chaqueta de Cuero</h3>
+                <h3 class="product-title">Tenis cuero marron textura reptil</h3>
                 <p class="product-price">$45.00</p>
                 <button class="add-to-cart">Añadir al Carrito</button>
             </div>
@@ -704,7 +718,29 @@ if (category === "Todos" || producto.getAttribute("data-category") === category)
 
     <script>
         // Funcionalidad del sidebar
-        const menuIcon = document.getElementById('menu-icon');
+     // ========== MOSTRAR NOMBRE DE USUARIO EN EL HEADER ==========
+    window.addEventListener('DOMContentLoaded', () => {
+        // Verificar si hay sesión activa
+        const usuarioActivo = localStorage.getItem('usuarioActivo');
+        
+        if (usuarioActivo) {
+            try {
+                const userData = JSON.parse(usuarioActivo);
+                const userWelcome = document.getElementById('user-welcome');
+                const userNameHeader = document.getElementById('user-name-header');
+                
+                if (userData.nombre && userWelcome && userNameHeader) {
+                    userNameHeader.textContent = userData.nombre;
+                    userWelcome.style.display = 'flex';
+                }
+            } catch (error) {
+                console.error('Error al cargar datos del usuario:', error);
+            }
+        }
+    });
+
+    // Funcionalidad del sidebar
+    const menuIcon = document.getElementById('menu-icon');
         const sidebar = document.getElementById('sidebar');
         const sidebarClose = document.getElementById('sidebar-close');
         
@@ -894,14 +930,22 @@ const logoutBtn = document.getElementById('logout-btn');
 if (perfilBtn) {
     perfilBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        const usuario = JSON.parse(localStorage.getItem('usuario'));
-        if (usuario) {
-            perfilNombre.textContent = usuario.nombre;
-            perfilCorreo.textContent = usuario.correo;
-            perfilModal.style.display = 'flex';
+        // Verificar PRIMERO si hay sesión activa en usuarioActivo
+        const usuarioActivo = localStorage.getItem('usuarioActivo');
+        
+        if (usuarioActivo) {
+            try {
+                const userData = JSON.parse(usuarioActivo);
+                perfilNombre.textContent = userData.nombre;
+                perfilCorreo.textContent = userData.correo;
+                perfilModal.style.display = 'flex';
+            } catch(error) {
+                console.error('Error al leer datos de sesión:', error);
+                window.location.href = 'login.html';
+            }
         } else {
-            // Si no hay sesión, redirige a registrarse
-            window.location.href = 'registrarse.html';
+            // Si no hay sesión activa, redirige al login
+            window.location.href = 'login.html';
         }
     });
 }
@@ -914,9 +958,19 @@ if (closePerfilModal) {
 
 if (logoutBtn) {
     logoutBtn.onclick = function() {
-        localStorage.removeItem('usuario');
-        perfilModal.style.display = 'none';
-        window.location.href = 'registrarse.html';
+        // Cerrar sesión de Firebase y localStorage
+        firebase.auth().signOut().then(() => {
+            localStorage.removeItem('usuarioActivo');
+            localStorage.removeItem('usuario');
+            perfilModal.style.display = 'none';
+            window.location.href = 'login.html';
+        }).catch((error) => {
+            console.error('Error al cerrar sesión:', error);
+            // Forzar cierre de sesión local
+            localStorage.removeItem('usuarioActivo');
+            localStorage.removeItem('usuario');
+            window.location.href = 'login.html';
+        });
     };
 }
 
@@ -1098,17 +1152,43 @@ modalAddBtn.onclick = () => {
   firebase.initializeApp(firebaseConfig);
 
   // Guarda datos del usuario en localStorage si está logueado
-  firebase.auth().onAuthStateChanged(function(user) {
+ firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       firebase.firestore().collection('c').doc(user.uid).get().then(function(doc) {
         if (doc.exists) {
           const datos = doc.data();
+          // Guardar en usuarioActivo (formato nuevo)
+          localStorage.setItem('usuarioActivo', JSON.stringify({
+            uid: user.uid,
+            nombre: datos.nombre,
+            correo: user.email,
+            sessionActive: true
+          }));
+          // También actualizar el formato antiguo por compatibilidad
           localStorage.setItem('usuario', JSON.stringify({
             nombre: datos.nombre,
             correo: user.email
           }));
+          
+          // Actualizar el nombre en el header
+          const userWelcome = document.getElementById('user-welcome');
+          const userNameHeader = document.getElementById('user-name-header');
+          if (userWelcome && userNameHeader) {
+            userNameHeader.textContent = datos.nombre;
+            userWelcome.style.display = 'flex';
+          }
         }
       });
+    } else {
+      // Si no hay usuario autenticado, limpiar localStorage
+      localStorage.removeItem('usuarioActivo');
+      localStorage.removeItem('usuario');
+      
+      // Ocultar nombre en header
+      const userWelcome = document.getElementById('user-welcome');
+      if (userWelcome) {
+        userWelcome.style.display = 'none';
+      }
     }
   });
 </script>
