@@ -26,8 +26,10 @@ header {
     z-index: 100;
 }
 .logo {
-    font-size: 1.8rem;
+    text-align: right;
+    font-size: 2rem;
     font-weight: bold;
+    margin: 0 20px 0 0;
 }
 
 .logo span {
@@ -177,6 +179,62 @@ header {
 .cart-item-info {
     flex: 1;
 }
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0;
+    position: relative;
+}
+
+.cart-item-minus, .cart-item-plus {
+    background: #d4af37;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(212,175,55,0.12);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.cart-item-minus:hover, .cart-item-plus:hover {
+    background: #b38e19;
+    transform: scale(1.12);
+}
+
+.cart-item-qty {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #222;
+    min-width: 28px;
+    text-align: center;
+}
+
+.cart-item-delete {
+    background: #d9534f;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 0;
+    box-shadow: 0 2px 6px rgba(217,83,79,0.12);
+    transition: background 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-item-delete:hover {
+    background: #b52a1a;
+    transform: scale(1.12);
+}
 
 .cart-total {
     padding: 20px;
@@ -246,45 +304,88 @@ header {
 
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem 2rem; /* Más espacio entre filas y columnas */
+    margin-top: 32px;
+    margin-bottom: 32px;
+    justify-items: center;
 }
-
+  .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 30px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
 .product-card {
-    background-color: white;
-    border-radius: 20px;
+    width: 280px; /* Ancho fijo para todas las tarjetas */
+    height: 420px; /* Altura fija para todas las tarjetas */
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     overflow: hidden;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(129, 21, 21, 0.1);
-    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
 }
 
 .product-card:hover {
     transform: translateY(-5px);
 }
 
-.product-img {
+/* Imagen con tamaño uniforme */
+.product-card .product-img {
     width: 100%;
-    height: 250px;
-    border-radius: 20px 20px 0 0;
+    height: 280px; /* Altura fija para todas las imágenes */
     object-fit: cover;
+    display: block;
+    border-radius: 14px 14px 0 0;
+    flex-shrink: 0; /* Evita que la imagen se encoja */
 }
 
+/* Contenedor de información del producto */
 .product-info {
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Ocupa el espacio restante */
+    justify-content: space-between;
 }
 
 .product-title {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
+    line-height: 1.4;
+    /* Limitar texto a 2 líneas máximo */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .product-price {
     font-weight: bold;
     color: #d4af37;
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    margin-top: auto; /* Empuja el precio hacia abajo */
 }
 
+/* Opcional: Contenedor para descripción del producto */
+.product-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0.5rem 0;
+    flex-grow: 1;
+    /* Limitar texto a 3 líneas máximo */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .add-to-cart {
     display: block;
     width: 100%;
@@ -448,3 +549,19 @@ footer {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+#product-modal .modal-desc {
+    margin-bottom: 18px;
+    color: #444;
+    font-size: 1rem;
+    text-align: left;
+}
+
+#product-modal img {
+    display: block;
+    margin: 0 auto 12px auto;
+    max-width: 100%;
+    border-radius: 12px;
+    position: relative;
+}
+
