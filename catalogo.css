@@ -565,3 +565,26 @@ footer {
     position: relative;
 }
 
+    .user-welcome {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #d4af37;
+        font-size: 0.9rem;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+    .user-welcome i {
+        font-size: 1rem;
+    }
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    @media (max-width: 600px) {
+        .user-welcome {
+            font-size: 0.75rem;
+            gap: 5px;
+        }
+    }

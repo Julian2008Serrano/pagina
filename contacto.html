@@ -42,6 +42,22 @@
         body.menu-open {
             overflow: hidden;
         }
+
+        /* NUEVO: estilos para el mapa responsivo */
+        .map-container{
+            width: 100%;
+            max-width: 900px;
+            margin: 18px auto 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .map-container iframe{
+            width: 100%;
+            height: 320px;
+            border: 0;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -66,6 +82,7 @@
             <section class="spotlight">
                 <article class="ubicacion">
                     <img src="Imagenes/Local.jpeg" alt="LUGAR" class="img-local">
+
                     <div class="mision-texto">
                         <div class="mision">
                             <h2>¿Quiénes somos?</h2>
@@ -73,6 +90,26 @@
                         </div>
                     </div>
                 </article>
+
+                <!-- Mapa: cómo llegar (AHORA debajo de la imagen y del texto "¿Quiénes somos?") -->
+                <div class="map-container" aria-label="Mapa de ubicación">
+                    <iframe
+                        src="https://www.google.com/maps?q=CRA+10+No.+15-40,+Sogamoso,+Boyac%C3%A1&output=embed"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Mapa Cuero y Moda"></iframe>
+                </div>
+
+                <!-- BOTÓN: Ver ubicación (debajo del mapa) -->
+                <div style="text-align:center; margin: 12px 0;">
+                    <a class="footer-location-btn" 
+                       href="https://www.google.com/maps?q=CRA+10+No.+15-40,+Sogamoso,+Boyac%C3%A1"
+                       target="_blank" rel="noopener noreferrer"
+                       aria-label="Abrir mapa en Google Maps">
+                        <i class="fas fa-map-marker-alt"></i> Ver ubicación
+                    </a>
+                </div>
             </section>
         </section>
     </div>
@@ -106,36 +143,38 @@
                 </a>
             </li>
             <li>
-                <a href="tel:+573144805949" title="Teléfono">
+                                <a href="tel:+573144805949" title="Teléfono">
                     <i class="fas fa-phone"></i>
-                </a>
-            </li>
         </ul>
-        <!-- Botón de ubicación -->
-        <a href="https://maps.google.com/?q=CRA+10+No.+15-40,+centro,+sogamoso,+boyacá" target="_blank" class="footer-location-btn" title="Ver ubicación">
-            <i class="fas fa-map-marker-alt"></i> Ubicación
-        </a>
     </footer>
 
     <script>
-        // Sidebar funcionalidad
+        // Toggle sidebar
         const menuIcon = document.getElementById('menu-icon');
         const sidebar = document.getElementById('sidebar');
         const sidebarClose = document.getElementById('sidebar-close');
 
-        menuIcon.addEventListener('click', () => {
+        menuIcon?.addEventListener('click', () => {
             sidebar.classList.add('open');
             document.body.classList.add('menu-open');
         });
 
-        sidebarClose.addEventListener('click', () => {
+        sidebarClose?.addEventListener('click', () => {
             sidebar.classList.remove('open');
             document.body.classList.remove('menu-open');
         });
 
-        // Cerrar sidebar al hacer clic fuera de él en móvil
+        // Cerrar sidebar al hacer clic fuera
         window.addEventListener('click', function(e) {
             if (sidebar.classList.contains('open') && !sidebar.contains(e.target) && e.target !== menuIcon) {
+                sidebar.classList.remove('open');
+                document.body.classList.remove('menu-open');
+            }
+        });
+
+        // Cerrar con Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
                 sidebar.classList.remove('open');
                 document.body.classList.remove('menu-open');
             }
